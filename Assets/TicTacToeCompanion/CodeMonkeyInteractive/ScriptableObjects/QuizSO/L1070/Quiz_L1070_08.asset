@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1070_08
+  m_EditorClassIdentifier: 
+  question: Why is the currentPlayablePlayerType field set only on the server?
+  optionList:
+  - To improve performance
+  - To maintain server authority over game state
+  - To simplify client logic
+  - To prevent cheating
+  correctOptionIndex: 1
+  answer: The server has authority over the game state so the server is the only
+    one that matters. You could synchronize this data to the players as well but
+    it would just be wasting bandwidth.

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0596a4b009226964a810aa8842024ccb, type: 3}
+  m_Name: CodeMonkeyInteractiveSO
+  m_EditorClassIdentifier: 
+  currentVersion: 1.01
+  quizStateList: []
+  frequentlyAskedQuestionStateList: []
+  exerciseStateList: []
+  lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
+  defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
+  activeExerciseSO: {fileID: 0}
+  lastSelectedLectureSO: {fileID: 11400000, guid: e40a622b62989ec419bd5299d2926f37,
+    type: 2}
+  checkedLastUpdateTimestamp: 0
+  lastUpdateVersion: 1.00
+  lastQOTDResponse:
+    questionId: 139
+    questionText: When you create a new script, do you always have to extend MonoBehaviour?
+    answerA: Yes
+    answerB: No
+    answerC: Only if you want to use it as a Game Object Component
+    answerD: 
+    answerE: 
+  lastQotdTimestamp: 0
+  websiteLatestMessage:
+    text: 'Hi there!
+
+      Thanks for picking up the course, I hope it helps you
+      a ton in your learning journey of making awesome multiplayer games!
+
+      I''m
+      always available in the course comments if you need help with anything.
+
+      -
+      Code Monkey
+
+
+      Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
+      where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
+  websiteLatestMessageTimestamp: 0
+  websiteDynamicMessage:
+    text: <u>Fresh Assets on Sale!</u>
+    url: https://cmonkey.co/unityassetstore
+  websiteDynamicMessageTimestamp: 0
+  websiteLatestVideos:
+    videos:
+    - youTubeId: YmUnXsOp_t0
+      title: Simplest Multiplayer Game! (FREE Course Unity Tutorial Netcode for Game
+        Objects)
+    - youTubeId: i6ztvrHCXxs
+      title: Is 2025 TOO LATE to Start making games?
+    - youTubeId: _V6z1fIqH0o
+      title: The BEST of 2024!
+    - youTubeId: 5xmbdWYlSkI
+      title: TOP 20 Visual Assets to INSPIRE YOU! (DECEMBER 2024)
+  websiteLatestVideosTimestamp: 0
+  lastChatAIQuestionAsked: What is Netcode for Game Objects?
+  lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
+    toolstack designed for small-scale co-op games. It''s the simplest networking
+    option provided by Unity and is best suited for games like Tic Tac Toe, which
+    you might build in the course, or other similar scale multiplayer games like
+    Overcooked or Phasmophobia. This toolstack is specifically made for projects
+    where you need to sync gameplay data across a network, making it easier to handle
+    connections, remote procedure calls (RPCs), network variables, and more[SOURCE].
+
+
+    [SOURCE]
+
+    Video
+    Quote: ""'
+  lastChatAIResponseAskSuccess:
+    code: 1
+    runId: run_rHNcLM2XAjtmjo1IscofZEbt
+    threadId: thread_6vC4bUhJEkvGSTkngr5RRh8w

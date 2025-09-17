@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1110_06
+  m_EditorClassIdentifier: 
+  question: What happens to the PlayerType[,] array when a player successfully places
+    an object?
+  optionList:
+  - The array remains unchanged
+  - The array is cleared and reset
+  - The position is marked as None
+  - "The corresponding position is updated with the current player\u2019s type"
+  correctOptionIndex: 3
+  answer: When a player places an object, the corresponding position in the PlayerType[,]
+    array is updated with their type (Cross or Circle).

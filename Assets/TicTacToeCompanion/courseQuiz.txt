@@ -1,0 +1,1771 @@
+####### Lecture Intro
+
+#### QUIZ
+Question: What is the main goal of this course?
+0) To create a multiplayer top-down shooter
+1) To build a simple multiplayer Tic Tac Toe game and learn the basics of multiplayer development
+2) To master Unity's animation system
+3) To design advanced multiplayer UI systems
+
+Correct: 1
+
+The course is focused on creating a simple multiplayer Tic Tac Toe game as a learning project for multiplayer basics. 
+This is a great beginner project but still requires learning quite a lot about Multiplayer game development that is then applicable to any game you want to make.
+
+
+Question: What is the key concept of multiplayer games discussed in the lecture?
+0) Advanced AI systems
+1) Synchronizing data between clients
+2) Complex graphics rendering
+3) Creating immersive audio experiences
+
+Correct: 1
+
+Multiplayer games are basically all about synchronizing data between clients. Different genres just synchronize different data but the core concepts remain the same. 
+Therefore learning to make a basic game like this one will be helpful in making all kinds of multiplayer games.
+
+
+Question: Who is this course intended for?
+0) Intermediate developers with basic Unity and C# knowledge
+1) Absolute beginners who have never used Unity or C#
+2) Advanced artists
+3) Graphic designers
+
+Correct: 0
+
+Multiplayer is inherently complex, so even though this is the simplest multiplayer game it still is not meant for absolute beginners.
+But as long as you have a good grasp of the basics of Unity and C# you should be able to follow everyting in hte course. I'm always available in the course comments if you need extra help with anything.
+
+
+Question: Why is Tic Tac Toe chosen as the project for this course?
+0) It’s a visually complex game
+1) It requires advanced AI systems
+2) It’s basic but teaches essential multiplayer concepts
+3) It uses advanced Unity animations
+
+Correct: 2
+
+Tic Tac Toe is super simple in design so it's perfect for focusing on the multiplayer implementation, it's a great learning project.
+
+
+Question: What is the purpose of the Quizzes and FAQs in this course?
+0) To make the course longer
+1) To reinforce learning and test understanding
+2) To replace lecture content
+3) To skip the need for practical coding
+
+Correct: 1
+
+Quizzes and FAQs are included to help you reinforce your understanding of the contents of each lecture to ensure you're truly learning.
+
+
+------------
+
+
+
+####### Lecture Getting Started, Installing Packages
+
+#### QUIZ
+Question: What Unity version is used in this tutorial?
+0) Unity 5
+1) Unity 6
+2) Unity 2021
+3) Unity 7
+
+Correct: 1
+
+Unity 6 which is the latest version as I'm recording this course. EVen if you're watching this in the future I highly recommend you use the same version as me just to avoid any confusion. Although Netcode for Game Objects and Unity itself is already very robust so I'm guessing this course will still be up to date even many years from now.
+
+
+Question: What is the purpose of the NetworkManager in Netcode for GameObjects?
+0) To manage game physics
+1) To control character animations
+2) To synchronize UI elements
+3) To handle the connection, data, and settings for multiplayer
+
+Correct: 3
+
+The NetworkManager is responsible for starting connections, managing settings, and handling multiplayer-specific data. It's the main component in Netcode for Game Objects.
+
+
+Question: Which transport is recommended as the default for Netcode for GameObjects?
+0) Photon Transport
+1) Unity Transport
+2) Steam Transport
+3) Amazon AWS Transport
+
+Correct: 1
+
+The Unity Transport is the simplest and default transport for Netcode for GameObjects. Although it is intentionally modular in case you want to use a different transport, you just need to swap it out and everything on the Netcode for Game Objects layer stays the same.
+
+
+Question: What is the key benefit of using Multiplayer Play Mode?
+0) It enhances graphics quality
+1) It makes testing multiplayer faster by avoiding builds
+2) It increases the number of players
+3) It synchronizes animations automatically
+
+Correct: 1
+
+Multiplayer Play Mode allows for super fast iteration speed by spawning separate Unity windows which are much faster than having to make a separate build every time you want to test something.
+
+
+Question: What does the Host option in NetworkManager do?
+0) Acts as a dedicated server
+1) Acts as a client only
+2) Acts as both a server and a player
+3) Connects to Steam servers
+
+Correct: 2
+
+The Host option combines the functionality of both a server and a client, allowing one player to act as the server while playing. That way you don't need dedicated servers for your games to work, one of the players will host the server themselves.
+
+
+Question: What is the RuntimeNetworkStatsMonitor used for?
+0) Synchronizing game objects
+1) Debugging animations
+2) Optimizing UI components
+3) Monitoring network activity and verifying connections
+
+Correct: 3
+
+The RuntimeNetworkStatsMonitor shows network activity, such as active connections, round trip time and data throughput, making it useful for verifying the multiplayer setup, as well as debugging bandwidth costs later on.
+
+
+Question: What is the primary reason Unity’s transport is modular?
+0) To allow connection to multiple servers
+1) To support custom transports like Steam Transport
+2) To manage multiple players
+3) To enhance connection speed
+
+Correct: 1
+
+The modularity allows developers to swap transports, like using Steam’s relay services, without altering the core game code.
+
+
+------------
+
+
+
+####### Lecture Grid Setup
+
+#### QUIZ
+Question: What component must be added to each grid position to detect clicks?
+0) Rigidbody2D
+1) BoxCollider2D
+2) SpriteRenderer
+3) EventSystem
+
+Correct: 1
+
+A BoxCollider2D is necessary to detect click events on 2D objects when using the OnMouseDown method.
+
+
+Question: What is the purpose of making the grid position objects into prefabs?
+0) To allow for easier future modifications
+1) To add animations
+2) To simplify multiplayer integration
+3) To enable automatic synchronization
+
+Correct: 0
+
+Prefabs make it easier to modify multiple objects at once. So in case we want to modify how the grid behaves in the future we just need to modify the prefab.
+
+
+Question: Which Unity function is used to detect mouse clicks in this lecture?
+0) OnMouseClick
+1) OnMouseDown
+2) OnPointerClick
+3) OnClick
+
+Correct: 1
+
+The OnMouseDown function is used to detect mouse clicks on objects with colliders, although other methods also work.
+
+
+Question: What alternative method is briefly mentioned for handling clicks on objects?
+0) Using Sound
+1) Using AnimationEvents
+2) Adding Rigidbody components
+3) Implementing the IPointerDownHandler interface
+
+Correct: 3
+
+We covered one alternative to handling mouse clicks on grid positions through the event system and implementing the IPointerDownHandler interface.
+
+
+Question: Why is the SerializeField attribute used for grid position coordinates?
+0) To make the fields public
+1) To keep fields private but editable in the Unity Editor
+2) To enable network synchronization
+3) To improve runtime performance
+
+Correct: 1
+
+[SerializeField] allows private fields to be edited in the Unity Editor while keeping them inaccessible to other classes. The most basic clean code principle is to minimize access as much as possible, so if a field is only meant to be used by one class it should be private. There's almost no reason to make a field public.
+
+
+Question: Why is it important to avoid making fields public unless necessary?
+0) It increases runtime performance
+1) It simplifies multiplayer integration
+2) It prevents other classes from unintentionally modifying the fields
+3) It improves the visual quality of the game
+
+Correct: 2
+
+Public fields can be accessed and modified by any class anywhere in your codebase, increasing the risk of unintended bugs. If you want them to be modifiable then make the field private and expose public get/set functions. In those you can then add validation to make sure the field never receives invalid values.
+
+
+Question: What type of camera is used in this project?
+0) Perspective camera
+1) Orthographic camera
+2) 360-degree camera
+3) Virtual reality camera
+
+Correct: 1
+
+This project uses an orthographic camera since it is a 2D game.
+
+
+------------
+
+
+
+####### Lecture Game Manager, Singleton Pattern
+
+#### QUIZ
+Question: What is the purpose of the GameManager class in this project?
+0) To manage animations for the grid
+1) To handle most of the game logic
+2) To play sounds
+3) To control the camera settings
+
+Correct: 1
+
+The GameManager class is created to manage the game logic.
+
+
+Question: What is the Singleton Pattern used for?
+0) Creating multiple instances of a class
+1) Managing physics interactions
+2) Ensuring there is only one instance of a class and providing global access to it
+3) Handling player animations
+
+Correct: 2
+
+The Singleton Pattern ensures that only one instance of a class exists and provides an easily accessible reference to it.
+
+
+Question: How do we define the singleton instance in the GameManager?
+0) Using a public static method
+1) Using a public static property with a public get and private set
+2) Using a private static variable
+3) Using a global variable
+
+Correct: 1
+
+A public static property with a public get and a private set is used to control access to the singleton instance. This way only that class can set it but any other class can get it, that's exactly the level of accessibility we want for our singleton.
+
+
+Question: What should happen if there is more than one instance of the GameManager (singleton)?
+0) The game continues without issues
+1) The additional instance is automatically deleted
+2) The singleton pattern is disabled
+3) An error is logged, as only one instance should exist
+
+Correct: 3
+
+In the code we included a simple if to check if the instance already exists. If so then that's a mistake since there should only ever be a single GameManager singleton instance.
+
+
+Question: What is a static field in C#?
+0) A field that belongs to a specific instance of a class
+1) A field that belongs to the class itself and not to any specific instance
+2) A field that is only accessible in the Unity Editor
+3) A field used for animations
+
+Correct: 1
+
+Static fields belong to the class itself, making them accessible without creating an instance of the class. Check out my C# course for the lecture on Static.
+
+
+Question: Why is it important to use private setters for the singleton property?
+0) To ensure only the class itself can modify the instance
+1) To improve performance
+2) To prevent errors during runtime
+3) To allow other classes to set the instance
+
+Correct: 0
+
+A private setter ensures that only the class itself can modify the singleton instance, maintaining the integrity of the singleton pattern.
+
+
+Question: How is the singleton instance initialized in the GameManager class?
+0) In the Awake method
+1) In the Start method
+2) In the Update method
+3) In the OnEnable method
+
+Correct: 0
+
+The singleton instance is set in the Awake method to ensure it is initialized as soon as possible. As a general rule you should initialize the current object on Awake and only access external references on Start.
+
+
+Question: Why is it better to use a singleton pattern instead of dragging references to every object?
+0) It improves performance
+1) It simplifies the codebase by avoiding the need to manually assign references
+2) It enhances visual quality
+3) It enables automatic synchronization
+
+Correct: 1
+
+The singleton pattern removes the need to manually drag references to objects, it also avoids the potential mistake of forgeting to drag a reference and makes the game more code focused (instead of editor focused) which personally I prefer.
+
+
+Question: What happens when a grid position is clicked?
+0) The game manager updates the grid visuals
+1) A new grid position is created
+2) The player's score is updated
+3) The player's score is updated
+
+Correct: 3
+
+Clicking a grid position triggers the ClickedOnGridPosition function in the GameManager, passing the X and Y coordinates. Importantly it does NOT spawn visuals, we will implement visuals in the next lecture but we will keep the logic decoupled from the visuals.
+
+
+------------
+
+
+
+####### Lecture Game Visual Manager, Spawn Objects
+
+#### QUIZ
+Question: Why are visual components placed in a child game object separated from logic components in this tutorial?
+0) To reduce memory usage
+1) To keep the game objects organized
+2) To improve graphics rendering
+3) To simplify the codebase
+
+Correct: 1
+
+Separating visuals from logic keeps the parent game object clean and organized, making it easier to modify and do anything you want to child visual objects without affecting the main game object.
+
+
+Question: What is the purpose of the GameVisualManager class?
+0) To handle all game logic
+1) To manage and spawn visual objects
+2) To manage player inputs
+3) To synchronize network connections
+
+Correct: 1
+
+The GameVisualManager is responsible for handling visual objects like the crosses and circles. It makes the visuals completely separate from the GameManager class that handles the logic.
+
+
+Question: What is required to synchronize an object spawn across all clients?
+0) Adding a BoxCollider2D to the object
+1) Adding a NetworkObject component and calling the Spawn method on the server
+2) Setting the object as a child of the GameManager
+3) Using a separate event system
+
+Correct: 1
+
+The object must have a NetworkObject component, and the server must call the Spawn method to synchronize it across clients. Only the server can spawn objects.
+
+
+Question: Why does the client receive an error when trying to spawn an object?
+0) The client doesn’t have authority to spawn objects
+1) The object prefab is missing the NetworkObject component
+2) The server is disconnected
+3) The client doesn’t have the required prefabs
+
+Correct: 0
+
+In a server-authoritative system, only the server has the authority to spawn objects, clients cannot spawn objects.
+
+
+Question: What is server authority in multiplayer games?
+0) A mode where the client controls all game logic
+1) A system where the server is the ultimate source of truth and manages critical actions like spawning objects
+2) A feature that allows multiple clients to control the same object
+3) A way to optimize game performance
+
+Correct: 1
+
+Server authority ensures that only the server controls critical game actions, providing a single source of truth.
+
+
+Question: Why do I recommend using events to manage visuals?
+0) To reduce memory usage
+1) To decouple the game logic from the visuals
+2) To enable automatic synchronization
+3) To simplify the Unity Editor setup
+
+Correct: 1
+
+Events are used to decouple the game logic from the visuals. This is a great clean code practice you should implement, the less coupling you have the easier your codebase is to manage.
+
+
+Question: Why is it important to define a prefab as a NetworkObject?
+0) To enable automatic animations
+1) To allow the object to be synchronized across the network
+2) To reduce network lag
+3) To make it easier to test in the Unity Editor
+
+Correct: 1
+
+Adding the NetworkObject component ensures the object can be spawned and synchronized across clients and the server. If it does not have a NetworkObject component (or isn't spawned) it will not exist on the network.
+
+
+Question: What is the purpose of the Spawn method in NetworkObject?
+0) To instantiate the object locally
+1) To synchronize the object across all clients
+2) To destroy the object on the server
+3) To assign ownership to a specific client
+
+Correct: 1
+
+The Spawn method ensures that the object is synchronized across the server and all connected clients. When the server calls Spawn(); on an object it will automatically instantiate and spawn that same object on all connected clients.
+
+
+------------
+
+
+
+####### Lecture RPCs
+
+#### QUIZ
+Question: What does RPC stand for in Unity's networking system?
+0) Random Protocol Communication
+1) Remote Protocol Configuration
+2) Real-time Procedure Command
+3) Remote Procedure Call
+
+Correct: 3
+
+RPC stands for Remote Procedure Call, which is used to send messages between the client and server to execute functions.
+
+
+Question: What is the purpose of using a Server RPC in this lecture?
+0) To ensure a function is executed only on the server
+1) To run a function on the client
+2) To optimize network traffic
+3) To synchronize animations
+
+Correct: 0
+
+A Server RPC ensures that a function is executed only on the server, preventing clients from trying to perform server-specific tasks like spawning an object on the network.
+
+
+Question: What must be appended to the name of an RPC function?
+0) Server
+1) Rpc
+2) Netcode
+3) Function
+
+Correct: 1
+
+The Rpc suffix is required for Unity to recognize the method as an RPC. Along with NetworkBehaviour, NetworkObject and the Rpc attribute.
+
+
+Question: What base class must a script inherit from to use RPCs?
+0) MonoBehaviour
+1) NetworkBehaviour
+2) ScriptableObject
+3) GameObject
+
+Correct: 1
+
+A script must inherit from NetworkBehaviour to utilize RPCs and other network features in Unity. If you use MonoBehaviour instead then the function marked with the Rpc attribute will simply work like a normal local function.
+
+
+Question: What component is necessary for objects using RPCs?
+0) Rigidbody2D
+1) BoxCollider2D
+2) Transform
+3) NetworkObject
+
+Correct: 3
+
+The NetworkObject component is required for any object utilizing RPCs to ensure it is part of the networked game.
+
+
+Question: What happens when a client calls a Server RPC?
+0) The function is executed locally on the client
+1) The function is sent to and executed on the server
+2) The function is ignored by the server
+3) The function synchronizes data across all clients
+
+Correct: 1
+
+When a client calls a Server RPC, it sends a message to the server, and the server executes the function. The client does NOT run that function (unless the client is a Host).
+
+
+Question: What common mistake can prevent RPCs from working?
+0) Forgetting to inherit from NetworkBehaviour
+1) Forgetting to add a Rigidbody2D component
+2) Forgetting to attach the script to a game object
+3) Forgetting to use MonoBehaviour
+
+Correct: 0
+
+Forgetting to inherit from NetworkBehaviour will cause RPCs to fail and the function will run like a normal function.
+
+
+Question: How do RPCs solve the issue of clients trying to spawn objects?
+0) By letting clients send a message to the server, which then spawns the objects
+1) By allowing clients to directly spawn objects
+2) By synchronizing the client’s state with the server
+3) By disabling object spawning entirely
+
+Correct: 0
+
+Clients cannot directly spawn objects, but they can send an RPC message to the server, which then handles the spawning of objects, ensuring server authority.
+
+
+Question: What does a Server RPC do when called from the client?
+0) It sends a message to the server, and the server executes the function
+1) It runs the function on all clients
+2) It executes the function on both the client and server
+3) It logs an error in the console
+
+Correct: 0
+
+A Server RPC sends a message from the client to the server, and only the server executes the function.
+
+
+------------
+
+
+
+####### Lecture Network Transform
+
+#### QUIZ
+Question: What does the NetworkTransform component do in Unity?
+0) Synchronizes transform data across the network
+1) Handles object spawning
+2) Manages player input
+3) Controls game logic
+
+Correct: 0
+
+The NetworkTransform component ensures the transform data (position, rotation, and scale) is synchronized across all networked clients.
+
+
+Question: Why are certain transform properties optional for synchronization in NetworkTransform?
+0) To allow better control over animations
+1) To minimize bandwidth usage
+2) To simplify the Unity Editor setup
+3) To reduce memory usage
+
+Correct: 1
+
+Synchronizing only the necessary data reduces bandwidth usage, which is crucial for multiplayer games. You don't need some data then don't waste bandwidth synchronizing it.
+
+
+Question: What transform properties did we synchronize in the lecture for this 2D game?
+0) Position (X, Y, Z), rotation, and scale
+1) Only X and Y position
+2) Position (X, Y, Z) and rotation
+3) Only rotation and scale
+
+Correct: 1
+
+Only the X and Y position are synchronized for this game in order to save bandwidth, we don't need rotation or scale on these objects.
+
+
+Question: What happens if the NetworkTransform component is not added to a networked object?
+0) The object cannot be spawned
+1) The transform data will not be synchronized across the network
+2) The object will not move
+3) The object will automatically synchronize
+
+Correct: 1
+
+Without NetworkTransform, changes to the object's transform data (like position updates) will not be synchronized across clients. The object will remain where it spawned forever on the client.
+
+
+Question: What feature of NetworkTransform ensures smooth movement of objects?
+0) Object pooling
+1) Network interpolation
+2) Client prediction
+3) Rigidbody2D synchronization
+
+Correct: 1
+
+NetworkTransform automatically interpolates an object’s movement to create smooth transitions between positions. The helps the game look smooth even if you use a low tick rate.
+
+
+Question: How can you make an object spawn at the correct position instantly without interpolation?
+0) Use a different network component
+1) Set the correct position during instantiation
+2) Increase the interpolation speed
+3) Enable all transform properties for synchronization
+
+Correct: 1
+
+Setting the position during instantiation ensures the object spawns in the correct position, even without a NetworkTransform.
+
+
+Question: Why is it important to minimize the data synchronized across the network?
+0) To improve the game’s graphics
+1) To reduce bandwidth usage and costs
+2) To simplify object spawning
+3) To increase memory usage
+
+Correct: 1
+
+Synchronizing less data reduces bandwidth usage, which lowers costs and improves game performance.
+
+
+------------
+
+
+
+####### Lecture Player Types, LocalClientId
+
+#### QUIZ
+Question: What is the purpose of defining PlayerType in this lecture?
+0) To store player scores
+1) To identify and distinguish players as Cross or Circle
+2) To synchronize the game state
+3) To manage game visuals
+
+Correct: 1
+
+The PlayerType enum is used to define and distinguish between the two players, assigning Cross or Circle to each player.
+
+
+Question: Why is an enum used to define player types instead of strings?
+0) Enums are easier to write
+1) Enums help prevent errors since you have limited possible values
+2) Strings require more memory
+3) Strings cannot be synchronized across the network
+
+Correct: 1
+
+Enums are strongly typed, therefore help prevent errors whereas strings are very error prone with "Cross" and "cross" being two completely different strings.
+
+
+Question: What callback is used to assign player types when a network connection is established?
+0) Awake
+1) Start
+2) OnNetworkSpawn
+3) OnEnable
+
+Correct: 2
+
+The OnNetworkSpawn callback is called when a networked object is spawned, making it the perfect place to assign player types.
+
+
+Question: What is the significance of NetworkManager.Singleton.LocalClientId?
+0) It identifies the server type
+1) It determines the unique ID of each connected client
+2) It stores the current player's type
+3) It synchronizes player data
+
+Correct: 1
+
+The LocalClientId provides a unique ID for each connected client, so we can use it to assign player types. The Host will always have id of 0.
+
+
+Question: Why is the local player type a private field with get/set functions instead of a public field?
+0) To prevent accidental or unauthorized modifications
+1) To reduce network latency
+2) To simplify code readability
+3) To enable RPC functionality
+
+Correct: 0
+
+Again, your fields should almost always be private to prevent unintended modifications of that data. In this case we want other classes to be able to get the local player type but not set it.
+
+
+Question: How does the server ensure only the current player can take a turn?
+0) By storing a currentPlayablePlayerType and checking it before allowing actions
+1) By sending RPCs to the client
+2) By disabling input on the client
+3) By locking the grid after every move
+
+Correct: 0
+
+The server tracks the currentPlayablePlayerType and ensures only the player whose turn it is can make a move. Again, our game is server authoritative so the server is the ultimate source of truth.
+
+
+Question: What problem occurs when the client spawns the wrong object, and how is it solved?
+0) The RPC runs on the server but accesses the wrong data; it’s solved by passing PlayerType as a parameter
+1) The client uses the wrong prefab; it’s solved by correcting the prefab reference
+2) The network object isn’t synchronized; it’s solved by adding NetworkTransform
+3) The client doesn’t have permissions; it’s solved by assigning server authority
+
+Correct: 0
+
+The RPC initially accesses the server's PlayerType instead of the client's. Passing PlayerType as a parameter solves this issue.
+
+
+Question: Why is the currentPlayablePlayerType field set only on the server?
+0) To improve performance
+1) To maintain server authority over game state
+2) To simplify client logic
+3) To prevent cheating
+
+Correct: 1
+
+The server has authority over the game state so the server is the only one that matters. You could synchronize this data to the players as well but it would just be wasting bandwidth.
+
+
+Question: What happens if a player tries to act when it’s not their turn?
+0) The player is kicked from the game
+1) The action is blocked by the server
+2) The client crashes
+3) The action is allowed but causes an error
+
+Correct: 1
+
+The server checks the currentPlayablePlayerType before allowing any actions, if a player tries to take an action when it's not their turn it simply does nothing.
+
+
+Question: Why is it important to use a value type like enum as an RPC parameter?
+0) Enums are faster to process
+1) Enums are easily serializable, and RPCs require serialization
+2) Enums are easier to create
+3) Enums simplify debugging
+
+Correct: 1
+
+RPCs have some limitations on the types of parameters they accept, the data must be serializable and Enums are serializable by default.
+
+
+------------
+
+
+
+####### Lecture Player UI
+
+#### QUIZ
+Question: What is the purpose of the PlayerUI in this lecture?
+0) To handle network connections
+1) To display the current player and active turn visually
+2) To manage the game logic
+3) To synchronize objects across the network
+
+Correct: 1
+
+The PlayerUI is designed to show which player is the local player and whose turn it is.
+
+
+Question: Why is the NetworkManager.Singleton.OnClientConnectedCallback used?
+0) To synchronize the player types
+1) To detect when clients connect to the server
+2) To update the player’s score
+3) To manage UI elements
+
+Correct: 1
+
+This callback detects when clients connect to the server, so we can use this to start the game when 2 players are connected.
+
+
+Question: What is the role of the StartGameRpc function?
+0) To spawn game objects
+1) To reset the game state
+2) To assign player types
+3) To notify all clients that the game has started
+
+Correct: 3
+
+The StartGameRpc function is an RPC that runs on all clients to notify them when the game starts.
+
+
+Question: Why did the client fail to update the UI when the turn changed?
+0) The OnGameStarted event was not fired on the client
+1) The arrow update logic was not synchronized to the client
+2) The PlayerUI script was not attached to the canvas
+3) The NetworkManager.Singleton was disconnected
+
+Correct: 1
+
+The turn change logic was only updating on the server and not synchronized to the client, leading to an incorrect UI on the client.
+
+
+Question: Why are events used for handling UI updates?
+0) To decouple logic and UI, making the code cleaner and more maintainable
+1) To improve rendering performance
+2) To increase the frame rate
+3) To simplify the network connection logic
+
+Correct: 0
+
+Events decouple game logic from UI updates, ensuring cleaner, modular, and more maintainable code.
+
+
+Question: What does the [Rpc(SendTo.ClientsAndHost)] attribute do?
+0) It runs the RPC on all clients and the host
+1) It ensures the RPC is executed only on the server
+2) It synchronizes game objects across the network
+3) It optimizes bandwidth usage
+
+Correct: 0
+
+This attribute ensures the RPC is executed on all connected clients and the host.
+
+
+------------
+
+
+
+####### Lecture Network Variable
+
+#### QUIZ
+Question: What is the purpose of a NetworkVariable in Unity's netcode system?
+0) To store data locally on the server
+1) To automatically synchronize a variable's value across the network
+2) To manage player input
+3) To store client-specific settings
+
+Correct: 1
+
+NetworkVariable is used to synchronize data between the server and all connected clients automatically.
+
+
+Question: What problem does the NetworkVariable solve in this lecture?
+0) Players being unable to place their objects
+1) The player type not being assigned correctly
+2) Objects spawning in the wrong positions
+3) The current turn not being synchronized between the server and clients
+
+Correct: 3
+
+The NetworkVariable ensures that the current player type is synchronized between the server and all clients without having to use RPCs.
+
+
+Question: What is the default behavior for NetworkVariable read and write permissions?
+0) Both the server and clients can read and write
+1) Only the server can write, and all clients can read
+2) Only clients can write, and the server can read
+3) Neither the server nor the clients can read or write
+
+Correct: 1
+
+By default, only the server can write to a NetworkVariable, and all clients can read from it. This is likely the permissions setup you want to use for most NetworkVariables.
+
+
+Question: What method is used to detect when a NetworkVariable changes?
+0) OnChangedCallback
+1) OnUpdate
+2) OnValueChanged
+3) OnSync
+
+Correct: 2
+
+The OnValueChanged delegate is used to detect when the value of a NetworkVariable changes. If you want to do some logic when the value changes (like updating the UI) you should hook that logic onto this delegate.
+
+
+Question: What is a key advantage of using NetworkVariable over RPCs for synchronization?
+0) It automatically synchronizes data without needing to explicitly send updates
+1) It requires less memory
+2) It can store more data
+3) It improves game graphics
+
+Correct: 0
+
+NetworkVariable automatically handles data synchronization, reducing the need for manually sending updates through RPCs.
+
+
+Question: What must be done to initialize a NetworkVariable?
+0) Use a separate synchronization script
+1) Create a listener for RPCs
+2) Attach a NetworkObject component
+3) Assign a default value in the constructor
+
+Correct: 3
+
+A NetworkVariable must be initialized with a default value using its constructor (or OnNetworkSpawn).
+
+
+------------
+
+
+
+####### Lecture Network Manager UI
+
+#### QUIZ
+Question: What is the purpose of the NetworkManagerUI?
+0) To manage game logic
+1) To provide UI buttons for starting the game as Host or Client
+2) To synchronize the network objects
+3) To track player scores
+
+Correct: 1
+
+The NetworkManagerUI provides an in-game user interface with buttons for connecting as Host or Client, replacing the need to use inspector buttons. We just call StartClient(); or StartHost(); on the NetworkManager and the connection starts.
+
+
+Question: What happens when the Host button is clicked?
+0) The game starts in offline mode
+1) The client connects to the server
+2) The game resets
+3) The NetworkManager.Singleton starts the game as a host
+
+Correct: 3
+
+Clicking the Host button calls NetworkManager.Singleton.StartHost(), which starts the game in host mode and opens it up for connections from clients.
+
+
+------------
+
+
+
+####### Lecture Player Type Array
+
+#### QUIZ
+Question: What is the purpose of the PlayerType[,] array?
+0) To store the data for which object is placed on what position
+1) To synchronize the game state across clients
+2) To update the UI
+3) To spawn objects at the correct position
+
+Correct: 0
+
+The PlayerType[,] array tracks the state of the board, it's a two dimensional array for all the board grid positions. It uses the enum type so we can store either None or Cross or Circle on each position.
+
+
+Question: What type is used for the board array?
+0) int[,]
+1) PlayerType[,]
+2) bool[,]
+3) float[,]
+
+Correct: 1
+
+It uses our custom enum PlayerType which is used to store the current state of each grid position, with values like None, Cross, or Circle.
+
+
+Question: How is the PlayerType[,] array initialized?
+0) In the Update method
+1) In the Start method with default values
+2) During the player’s turn
+3) In the Awake method as a 3x3 grid
+
+Correct: 3
+
+The array is initialized in the Awake method as a 3x3 grid, matching the Tic Tac Toe board. As always remember the general rule of initializing your objects on the Awake, and accessing external references on Start.
+
+
+Question: What happens if a player tries to place an object on an occupied grid position?
+0) The object replaces the previous one
+1) The game crashes
+2) The action is blocked and nothing happens
+3) The grid resets
+
+Correct: 2
+
+The game checks the PlayerType[,] array for the grid position, and if it’s already occupied, the action is blocked and does nothing.
+
+
+Question: How is an empty grid position represented in the PlayerType[,] array?
+0) PlayerType.None
+1) PlayerType.Empty
+2) PlayerType.Zero
+3) null
+
+Correct: 0
+
+PlayerType.None is used to represent an empty grid position in the array. It is also the Enum value on position 0 which is a good clean code practice.
+
+
+Question: What happens to the PlayerType[,] array when a player successfully places an object?
+0) The array remains unchanged
+1) The array is cleared and reset
+2) The position is marked as None
+3) The corresponding position is updated with the current player’s type
+
+Correct: 3
+
+When a player places an object, the corresponding position in the PlayerType[,] array is updated with their type (Cross or Circle).
+
+
+Question: Why is the PlayerType[,] array initialized in the Awake method?
+0) To ensure it’s ready before any game logic runs
+1) To delay initialization until needed
+2) To synchronize with the network
+3) To reduce memory usage
+
+Correct: 0
+
+Initializing the array in Awake ensures it is ready before any other game logic depends on it.
+
+
+------------
+
+
+
+####### Lecture Test Winner Function
+
+#### QUIZ
+Question: What is the purpose of the TestWinner() function?
+0) To synchronize the player types across the network
+1) To check if a player has achieved a winning condition in the game
+2) To reset the board state
+3) To determine which player starts the game
+
+Correct: 1
+
+The TestWinner() function determines if a player has achieved a winning condition by checking the board for three identical player objects in a row.
+
+
+Question: Why is a Struct used to define a Line instead of a class?
+0) To optimize memory usage as structs are value types
+1) To make the lines easier to serialize
+2) To complicate the code
+3) To enable network synchronization
+
+Correct: 0
+
+A Struct is a value type, making it more memory-efficient for defining immutable data like a line of grid positions.
+
+
+Question: How are the winning lines initialized in the game?
+0) Dynamically calculated during gameplay
+1) Loaded from a file
+2) Hardcoded into the TestWinner() function
+3) Defined in a list during the Awake method
+
+Correct: 3
+
+All possible winning lines are predefined in a list during the Awake method for efficiency. Then when checking for winners we just go through that cached list.
+
+
+Question: What does the OnGameWin event do?
+0) Ends the game immediately
+1) Triggers when a win is detected and provides data about the winning line
+2) Synchronizes the board state
+3) Resets the game board
+
+Correct: 1
+
+The OnGameWin event is triggered when a win is detected and provides information about the winning line which the visual script then uses to display a winning line.
+
+
+Question: What additional data is passed with the OnGameWin event?
+0) The winning player's ID
+1) The total number of turns taken
+2) The remaining grid positions
+3) The center grid position and orientation of the winning line
+
+Correct: 3
+
+The OnGameWin event provides the center grid position and orientation of the winning line to display a visual indicator.
+
+
+Question: Why is an enum used for the Orientation of a line?
+0) To simplify the rotation logic for the winning line visual
+1) To use more bandwidth
+2) To make the game compatible with Unity's physics system
+3) To synchronize the grid state across the network
+
+Correct: 0
+
+The Orientation enum allows for clear and easy handling of the visual rotation of the winning line based on its type (Horizontal, Vertical, DiagonalA and DiagonalB). If you ever need to define a list of possible values then you should use an enum.
+
+
+Question: Why is the TestWinner() function called after each turn?
+0) To update the current player type
+1) To reset the grid positions
+2) To synchronize the game state across the network
+3) To check if the game has been won after every move
+
+Correct: 3
+
+The TestWinner() function is called after each turn to determine if the most recent move resulted in a win.
+
+
+------------
+
+
+
+####### Lecture Game Over UI
+
+#### QUIZ
+Question: What is the purpose of the GameOverUI?
+0) To reset the game after it ends
+1) To manage player connections
+2) To synchronize game state across the network
+3) To display a message showing whether the player won or lost
+
+Correct: 3
+
+The GameOverUI is designed to show a message indicating whether the player won or lost when the game ends. Later on we will add a button to restart the game.
+
+
+Question: When is the GameOverUI hidden?
+0) Awake()
+1) Start()
+2) OnEnable()
+3) Reset()
+
+Correct: 1
+
+The GameOverUI is hidden on Start() in order to ensure the script can listen to some events on Start() before the game object is disabled. If we were to hide it on Awake() then the Start() would never run and we would not be able to listen to events.
+
+
+Question: What data is passed to the GameOverUI to determine the result?
+0) The total number of moves taken
+1) The final score of both players
+2) The state of the game board
+3) The winning player's PlayerType
+
+Correct: 3
+
+The GameOverUI uses the winnerPlayerType to determine whether the local player won or lost.
+
+
+Question: What issue arises when passing a Line object as an RPC parameter?
+0) The Line object cannot be synchronized across clients
+1) The Line object is not serializable by default
+2) The Line object causes performance issues
+3) The Line object is incompatible with Unity's UI system
+
+Correct: 1
+
+Custom types like Line are not serializable by default, and attempting to pass them as RPC parameters results in an error. We need to either implement serialization ourselves or use a different type.
+
+
+Question: What solution is implemented to pass the winning line data in the RPC?
+0) Pass the index of the line in the predefined line list
+1) Serialize the Line object manually
+2) Use a global variable to store the line data
+3) Convert the Line object to a string
+
+Correct: 0
+
+Instead of sending the entire Line object, the index of the winning line in the predefined line list is passed to the clients. Since the list is initialized with the exact same data on all clients we don't need to sync any more data than the index.
+
+
+Question: Why is the OnGameWin event fired on both the server and client?
+0) To synchronize the board state
+1) To ensure both server and client update their UI when the game ends
+2) To initialize the next game
+3) To debug network connections
+
+Correct: 1
+
+Even though the server is the one that defines where we have a win, the OnGameWin event is fired on both the server and client in order to update their respective GameOverUI elements and show the correct win/loss message.
+
+
+Question: Why is the lineIndex used instead of the Line object in the RPC?
+0) It reduces GPU usage
+1) It simplifies the game logic
+2) It improves the game's frame rate
+3) The Line custom type is serializable by default while int is
+
+Correct: 3
+
+The Line type is not serializable by default, so passing its index in the predefined list is a simpler and more effective solution.
+
+
+Question: Why must the visual winning line be spawned only on the server?
+0) To improve network performance
+1) To ensure the winning line is synchronized across all clients
+2) To simplify the client logic
+3) To prevent the game from crashing
+
+Correct: 1
+
+The winning line visual must be spawned only on the server to ensure it is synchronized correctly across all clients since only the server can spawn objects. Although alternatively we could spawn a local non-networked line if we wanted.
+
+
+------------
+
+
+
+####### Lecture Rematch
+
+#### QUIZ
+Question: What is the purpose of the Rematch functionality in this lecture?
+0) To restart the entire application
+1) To allow players to reset the game board and play another round without restarting the game
+2) To disconnect players from the server
+3) To synchronize the player data across the network
+
+Correct: 1
+
+The Rematch functionality resets the game board, player turns, and visuals, allowing players to start a new game without restarting the entire game executable.
+
+
+Question: What does the RematchRpc function do?
+0) It disconnects clients from the server
+1) It synchronizes the player scores
+2) It creates a new game session
+3) It resets the game board state and player turns on the server
+
+Correct: 3
+
+The RematchRpc function resets the board state, sets the currentPlayerType to Cross, and prepares the game for a new round.
+
+
+Question: How are the board positions reset during a rematch?
+0) By cycling through the playerTypeArray and setting all positions to PlayerType.None
+1) By creating a new 2D array
+2) By clearing all network variables
+3) By calling a reset method on the NetworkManager
+
+Correct: 0
+
+The board positions are reset by iterating over the playerTypeArray and setting each position to PlayerType.None.
+
+
+Question: Why is the RematchRpc function marked as [Rpc(SendTo.Server)]?
+0) To ensure only the server handles the board reset logic
+1) To synchronize the visuals across clients
+2) To optimize network performance
+3) To allow clients to call the function locally
+
+Correct: 0
+
+The RematchRpc function is server-authoritative, so it must be handled by the server to maintain consistency across all clients.
+
+
+Question: What happens to the game visuals during a rematch?
+0) They are hidden temporarily
+1) They are saved for the next round
+2) They are updated with new colors
+3) They are destroyed on the server
+
+Correct: 3
+
+All visual game objects are destroyed on the server which in turn destroys them in all the clients, and they are cleared from the visualGameObjectList to prepare for a new game round.
+
+
+Question: Why is a TriggerOnRematchRpc function needed?
+0) To reset the game logic on the server
+1) To ensure the rematch event is fired on both the server and all clients
+2) To update the player UI
+3) To disconnect inactive clients
+
+Correct: 1
+
+The TriggerOnRematchRpc ensures that the rematch event is fired on both the server and all clients, allowing them to prepare for a new game.
+
+
+Question: How is the GameOverUI hidden during a rematch?
+0) By listening to the rematch event and calling Hide()
+1) By disabling its parent game object
+2) By resetting the canvas component
+3) By restarting the game application
+
+Correct: 0
+
+The GameOverUI listens to the rematch event and calls its Hide() function to hide it from the screen.
+
+
+Question: What does the visualGameObjectList store?
+0) The player scores
+1) References to all visual game objects, including placed pieces and the winning line
+2) The player positions
+3) The current game state
+
+Correct: 1
+
+The visualGameObjectList keeps track of all visual game objects so they can be destroyed during a rematch.
+
+
+Question: Why is it important to fire the rematch event on both server and clients?
+0) To synchronize the network variables
+1) To update the player scores
+2) To ensure all clients reset their game states and visuals correctly
+3) To refresh the network connections
+
+Correct: 2
+
+Firing the rematch event on both server and clients ensures all game states and visuals are reset. They do different things (the client just hides the GameOverUI element) but they must both know when a Rematch happens.
+
+
+Question: What happens to the current player type during a rematch?
+0) It is cleared
+1) It is reset to PlayerType.Cross
+2) It alternates to the other player
+3) It remains the same as the previous game
+
+Correct: 1
+
+The currentPlayerType is reset to PlayerType.Cross at the start of each new game. Although you could make this based on who lost the previous match, or random.
+
+
+------------
+
+
+
+####### Lecture Tie
+
+#### QUIZ
+Question: What condition defines a tie in Tic Tac Toe?
+0) The board has fewer than three moves
+1) All grid positions are occupied, and there is no winner
+2) The current player skips their turn
+3) A player places three objects in a row
+
+Correct: 1
+
+A tie occurs when all grid positions are occupied, and no player has achieved three in a row.
+
+
+Question: Where is the tie-checking logic implemented?
+0) In the TestWinner function
+1) In the RematchRpc function
+2) In the OnGameWin event
+3) In the Start method
+
+Correct: 0
+
+The tie-checking logic is added to the TestWinner function, ensuring it is checked after a player makes a move and after determining if there’s a winner.
+
+
+Question: What indicates a tie when checking the playerTypeArray?
+0) At least one grid position is PlayerType.Cross
+1) All grid positions are set to PlayerType.None
+2) The first row contains only circles
+3) All grid positions are filled with no PlayerType.None
+
+Correct: 3
+
+A tie is detected when all grid positions in the playerTypeArray are filled, with no positions left as PlayerType.None.
+
+
+Question: What is the purpose of the TriggerOnGameTieRpc function?
+0) To reset the game board
+1) To notify all clients of a tie condition
+2) To declare a winner
+3) To disconnect inactive players
+
+Correct: 1
+
+The TriggerOnGameTieRpc function notifies all clients when a tie condition is detected. This is necessary since the TestWinner() function is only running on the server.
+
+
+Question: What event is triggered to handle a tie condition?
+0) OnGameWin
+1) OnGameTie
+2) OnPlayerTurn
+3) OnBoardReset
+
+Correct: 1
+
+The OnGameTie event is triggered to handle a tie condition and update the UI.
+
+
+Question: What happens when the OnGameTie event is triggered?
+0) The game resets immediately
+1) The game switches to a new mode
+2) The GameOverUI displays a tie message
+3) Players disconnect from the server
+
+Correct: 2
+
+When the OnGameTie event is triggered, the GameOverUI shows up and updates to display a tie message.
+
+
+Question: Why is the tie-checking logic placed after the winner-checking logic?
+0) To prioritize detecting a winner before checking for a tie
+1) To improve performance
+2) To avoid resetting the game board
+3) To synchronize the network state
+
+Correct: 0
+
+The tie-checking logic is executed after the winner-checking logic to ensure that a win takes precedence over a tie condition.
+
+
+Question: What must be done in the UI to handle a tie condition?
+0) Create a new UI element specifically for ties
+1) Add a tie message and listen for the OnGameTie event
+2) Synchronize the game board
+3) Reset the current player type
+
+Correct: 1
+
+The UI listens for the OnGameTie event and updates with a tie message when the event is triggered.
+
+
+------------
+
+
+
+####### Lecture Score
+
+#### QUIZ
+Question: What is the purpose of using NetworkVariable<int> for the player scores?
+0) To store scores locally for each player
+1) To update the UI in real-time
+2) To automatically synchronize player scores across the network
+3) To reduce memory usage
+
+Correct: 2
+
+NetworkVariable<int> ensures that player scores are synchronized between the server and all connected clients.
+
+
+Question: What happens if scores are stored as regular int variables instead of NetworkVariable<int>?
+0) Scores will be synchronized to all clients
+1) Scores will only update on the server and remain 0 on clients
+2) Scores will not be visible in the UI
+3) Scores will reset after each game
+
+Correct: 1
+
+Regular int variables are not synchronized, so clients will not see updated scores unless explicitly handled.
+
+
+Question: How are player scores updated when a player wins?
+0) Through a UI event listener
+1) By resetting the board
+2) By incrementing the respective NetworkVariable<int>.Value based on the winning player type
+3) By using a ClientRpc
+
+Correct: 2
+
+The NetworkVariable<int> for the winning player type is incremented on the server when a player wins. Since it's a NetworkVariable the new value gets automatically synchronized across all clients.
+
+
+Question: What special parameter is used in the GetScores function?
+0) Tuple
+1) Anonymous Type
+2) ref keyword
+3) out keyword
+
+Correct: 3
+
+The out keyword (output parameter) is used for returning both scores from a single function.
+
+
+Question: Why does the initial score update appear to lag behind on the client?
+0) The network connection is too slow
+1) The score update happens locally before the network variable is synchronized
+2) The NetworkVariable is not initialized
+3) The server has not received the player's move
+
+Correct: 1
+
+The score update appears delayed because the network variable takes a moment to synchronize across the network. If you want to update something based on a NetworkVariable then you should make that dependent on the OnValueChanged delegate on the NetworkVariable.
+
+
+Question: What is the purpose of the OnScoreChanged event?
+0) To notify the UI to update the displayed scores when the scores change
+1) To reset the player scores
+2) To synchronize the player type
+3) To handle rematch logic
+
+Correct: 0
+
+The OnScoreChanged event notifies the UI whenever the scores are updated, ensuring the displayed values are accurate.
+
+
+Question: Why is the score update logic attached to the OnValueChanged delegate?
+0) To ensure the score update is reflected on all clients
+1) To prevent the server from overriding the client score
+2) To reduce the network bandwidth usage
+3) To allow manual synchronization of scores
+
+Correct: 0
+
+Attaching the update logic to the OnValueChanged delegate ensures that the UI updates whenever the score changes, even across the network.
+
+
+------------
+
+
+
+####### Lecture Sound Effects and Music
+
+#### QUIZ
+Question: What is the purpose of adding sound effects and music to the game?
+0) To improve game logic
+1) To enhance the player's experience by adding some nice sounds
+2) To increase network performance
+3) To reduce the game's file size
+
+Correct: 1
+
+Sound effects and music enhance the player's experience, they're a crucial part of any game.
+
+
+Question: How is the PlaceSfx sound effect handled in this lecture?
+0) It is synchronized across the network
+1) It is managed by the GameManager directly
+2) It is added as a component to the grid
+3) It is played locally without network synchronization
+
+Correct: 3
+
+The PlaceSfx sound effect is spawned and destroyed locally since it doesn’t require network synchronization. This helps us reduce bandwidth utilization for our game.
+
+
+Question: What is the role of the SoundManager in this lecture?
+0) To handle all audio-related functionality in a clean and centralized way
+1) To reset the game board
+2) To synchronize sound effects with the network
+3) To manage player scores
+
+Correct: 0
+
+The SoundManager is created to handle all sound-related functionality, keeping the code clean and organized.
+
+
+Question: What is the advantage of playing sound effects locally instead of synchronizing them over the network?
+0) It ensures all players hear the same sound at the same time
+1) It prevents sound effects from being destroyed prematurely
+2) It simplifies network synchronization and reduces bandwidth usage
+3) It makes the sound effects louder
+
+Correct: 2
+
+Playing sound effects locally avoids unnecessary network synchronization, reducing bandwidth usage and simplifying the implementation.
+
+
+Question: What function is used to destroy sound effect game objects after they play?
+0) Disable()
+1) Destroy()
+2) Remove()
+3) Stop()
+
+Correct: 1
+
+The Destroy() function is used to remove the sound effect game objects after a specified duration, it's an easy way to handle clean up.
+
+
+Question: How is the sound effect for a win or loss handled?
+0) Played on all clients simultaneously
+1) Played locally, with separate sounds for win and loss
+2) Managed through the network to synchronize timing
+3) Played only on the server
+
+Correct: 1
+
+The win or loss sound is played locally, with different sounds based on whether the local player won or lost.
+
+
+Question: What component is required to add background music to the game?
+0) AudioSource
+1) NetworkObject
+2) MusicManager
+3) SoundMixer
+
+Correct: 0
+
+An AudioSource component is added to a game object, set to loop, and assigned the music file to play continuously.
+
+
+Question: How are sound effects instantiated in the game?
+0) By calling AudioSource.Play() directly
+1) By instantiating a prefab with an AudioSource component set to Play on Awake
+2) By adding them to the GameManager
+3) By enabling a preloaded game object
+
+Correct: 1
+
+Sound effects are instantiated by creating a prefab with an AudioSource component set to Play on Awake which will make them play as soon as they're spawned, and then they are destroyed a few seconds after.
+
+
+------------
+
+
+
+####### Lecture Lobby, Relay, Other Multiplayer Tools
+
+#### QUIZ
+Question: What is the primary purpose of Unity's Lobby service in a multiplayer game?
+0) To store player scores
+1) To reduce latency during gameplay
+2) To synchronize game objects across the network
+3) To group players together before starting the game
+
+Correct: 3
+
+The Lobby service allows players to group together in a shared space before starting a game.
+
+
+Question: Why is Unity's Relay service used in multiplayer games?
+0) To bypass firewalls and simplify connections between players
+1) To synchronize player movements
+2) To manage game states across players
+3) To reduce bandwidth usage
+
+Correct: 0
+
+The Relay service acts as a middleman to bypass firewalls, allowing players to connect without requiring port forwarding.
+
+
+Question: What is the main downside of using Unity's Relay service?
+0) Increased file size
+1) Difficulty in implementation
+2) Higher ping due to the middleman server
+3) Limited player count
+
+Correct: 2
+
+Using Relay introduces a higher ping since all data must pass through the Relay server. Although not an issue for small scale co-op games, like what Netcode for Game Objects is meant for.
+
+
+Question: What does the Lobby Manager primarily handle?
+0) Player authentication and lobby data management
+1) Game object synchronization
+2) Real-time voice communication
+3) Analytics tracking
+
+Correct: 0
+
+The Lobby Manager script handles player authentication, creating and managing lobbies, and synchronizing lobby-related data.
+
+
+Question: What kind of connection does Unity's Lobby use?
+0) Real-time WebSocket connection
+1) HTTP-based polling
+2) Peer-to-peer direct connection
+3) UDP-based synchronization
+
+Correct: 1
+
+Unity's Lobby operates using HTTP-based polling to fetch and update lobby data. It does not create a realtime connection.
+
+
+Question: What is the purpose of the 'Relay Join Code'?
+0) To track player scores in the relay
+1) To synchronize the player list
+2) To allow clients to connect to the relay server
+3) To reduce latency
+
+Correct: 2
+
+The Relay Join Code enables clients to connect to the relay server, replacing the need for direct IP connections.
+
+
+Question: What happens in this game when a Lobby reaches the required number of players?
+0) It adds more players automatically
+1) It starts the game and connects players
+2) It disconnects idle players
+3) It resets the lobby
+
+Correct: 1
+
+When the required number of players join the Lobby, it starts the game and establishes the connection between players through the Relay.
+
+
+Question: What Unity service can be used to host dedicated servers for multiplayer games?
+0) Relay
+1) Game Server Hosting
+2) Lobby
+3) Matchmaker
+
+Correct: 1
+
+Unity's Game Server Hosting service (previously called Multiplay) is designed for managing and hosting dedicated server fleets.
+
+
+Question: What additional feature does the Matchmaker service provide?
+0) Firewall bypass
+1) Grouping players based on rules and preferences
+2) Managing audio chat
+3) Hosting player leaderboards
+
+Correct: 1
+
+Matchmaker groups players together based on predefined rules, such as skill level or preferences.
+
+
+------------
+
+
+
+####### Lecture Polish
+
+#### QUIZ
+Question: Why is the polish stage important in game development?
+0) It fixes all major bugs in the game
+1) It makes the game look and feel more professional and enjoyable
+2) It simplifies the codebase
+3) It optimizes performance
+
+Correct: 1
+
+The polish stage is meant to enhance the game as a whole, mainly focusing on visuals, animations, sounds, but of course also important to improve the UI, UX, Bugfixing, etc. This is the very important stage that can take your game from great to AWESOME!
+
+
+Question: What asset did I use to add animations and effects like squash and stretch to objects?
+0) Text Animator
+1) All-in-One Sprite Shader
+2) FEEL
+3) Unity Post-Processing
+
+Correct: 2
+
+The FEEL asset was used to add animations like squash and stretch to enhance the visual effects. It's an excellent asset, I highly recommend it.
+
+
+Question: What tool was used to add outlines and blur effects to sprites?
+0) Text Animator
+1) All-in-One Sprite Shader
+2) Unity Visual Effects Graph
+3) FEEL
+
+Correct: 1
+
+The All-in-One Sprite Shader was used to add outlines and blur effects to enhance sprite visuals. It's another excellent asset, I highly recommend it.
+
+
+Question: What visual effect was added to the game’s background for extra polish?
+0) Static image
+1) Gradient overlay
+2) Dynamic lighting
+3) Particle effects
+
+Correct: 3
+
+I added a simple particle effect to the background to make the game look more dynamic. Simple but effective.
+
+
+Question: Which of the following tools was used to animate the 'YOU WIN' text?
+0) FEEL
+1) Text Animator
+2) All-in-One Sprite Shader
+3) Unity Animation Clips
+
+Correct: 1
+
+The Text Animator asset was used to animate the 'YOU WIN' text with effects like wiggle. Another great polish tool, super easy to use and a tiny animation in your text makes all the difference in the world.
+
+
+Question: What purpose do post-processing effects serve in the game?
+0) They optimize performance
+1) They add visual enhancements like bloom and vignette
+2) They synchronize game objects
+3) They manage player input
+
+Correct: 1
+
+Post-processing effects, such as bloom and vignette, enhance the overall visual quality of the game.
+
+
+Question: What was the purpose of the 'connecting' UI element?
+0) To display player scores
+1) To show a message while establishing the multiplayer connection
+2) To allow players to chat
+3) To display game instructions
+
+Correct: 1
+
+The Connecting UI is a simple way to provide feedback to the player. It's always important that the players knows the game didn't freeze or crash.
+
+
+Question: What is the main benefit of using third-party tools like Feel and Text Animator?
+0) They improve code performance
+1) They make it easier to add professional-quality effects quickly
+2) They reduce the game's file size
+3) They simplify multiplayer networking
+
+Correct: 1
+
+Third-party tools like FEEL and Text Animator simplify the process of adding professional-quality effects, saving time (money) and effort.
+
+
+------------
+
+
+

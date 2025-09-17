@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L0020_FinalGamePreview
+  m_EditorClassIdentifier: 
+  lectureCode: 20
+  lectureSectionNumber: 2
+  lectureName: FinalGamePreview
+  lectureTitle: FinalGamePreview
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 211a6877f2357fd4ea60c1eb534ff85b,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: bfe394a4ab74a60458c4e29c9777bd76, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}

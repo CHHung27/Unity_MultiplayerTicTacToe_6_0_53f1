@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1050_09
+  m_EditorClassIdentifier: 
+  question: What does a Server RPC do when called from the client?
+  optionList:
+  - It sends a message to the server, and the server executes the function
+  - It runs the function on all clients
+  - It executes the function on both the client and server
+  - It logs an error in the console
+  correctOptionIndex: 0
+  answer: A Server RPC sends a message from the client to the server, and only the
+    server executes the function.

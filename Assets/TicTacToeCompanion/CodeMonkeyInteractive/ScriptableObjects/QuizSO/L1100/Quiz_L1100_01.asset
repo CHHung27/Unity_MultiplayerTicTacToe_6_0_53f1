@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1100_01
+  m_EditorClassIdentifier: 
+  question: What is the purpose of the NetworkManagerUI?
+  optionList:
+  - To manage game logic
+  - To provide UI buttons for starting the game as Host or Client
+  - To synchronize the network objects
+  - To track player scores
+  correctOptionIndex: 1
+  answer: The NetworkManagerUI provides an in-game user interface with buttons for
+    connecting as Host or Client, replacing the need to use inspector buttons. We
+    just call StartClient(); or StartHost(); on the NetworkManager and the connection
+    starts.

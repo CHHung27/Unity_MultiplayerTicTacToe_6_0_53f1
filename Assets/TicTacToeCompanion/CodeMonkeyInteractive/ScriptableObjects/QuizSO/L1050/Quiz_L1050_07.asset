@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1050_07
+  m_EditorClassIdentifier: 
+  question: What common mistake can prevent RPCs from working?
+  optionList:
+  - Forgetting to inherit from NetworkBehaviour
+  - Forgetting to add a Rigidbody2D component
+  - Forgetting to attach the script to a game object
+  - Forgetting to use MonoBehaviour
+  correctOptionIndex: 0
+  answer: Forgetting to inherit from NetworkBehaviour will cause RPCs to fail and
+    the function will run like a normal function.

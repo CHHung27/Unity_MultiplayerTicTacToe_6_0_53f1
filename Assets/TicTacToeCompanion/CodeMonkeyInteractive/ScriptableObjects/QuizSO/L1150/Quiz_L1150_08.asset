@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1150_08
+  m_EditorClassIdentifier: 
+  question: What must be done in the UI to handle a tie condition?
+  optionList:
+  - Create a new UI element specifically for ties
+  - Add a tie message and listen for the OnGameTie event
+  - Synchronize the game board
+  - Reset the current player type
+  correctOptionIndex: 1
+  answer: The UI listens for the OnGameTie event and updates with a tie message when
+    the event is triggered.

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1140_05
+  m_EditorClassIdentifier: 
+  question: What happens to the game visuals during a rematch?
+  optionList:
+  - They are hidden temporarily
+  - They are saved for the next round
+  - They are updated with new colors
+  - They are destroyed on the server
+  correctOptionIndex: 3
+  answer: All visual game objects are destroyed on the server which in turn destroys
+    them in all the clients, and they are cleared from the visualGameObjectList to
+    prepare for a new game round.

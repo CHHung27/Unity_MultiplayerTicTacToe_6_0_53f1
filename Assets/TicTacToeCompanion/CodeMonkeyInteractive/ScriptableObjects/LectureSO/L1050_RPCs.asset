@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1050_RPCs
+  m_EditorClassIdentifier: 
+  lectureCode: 1050
+  lectureSectionNumber: 5
+  lectureName: RPCs
+  lectureTitle: RPCs
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 373d6efc0dc5f664ba752c4ecba8aa34,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 5c68fd8bbe9f0764c8fa364c5e1a3d8d, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: RPCs</h1><p>In this lecture, we learned
+    how to use <strong>RPCs </strong>(Remote Procedure Calls) to ensure the server
+    handles spawning objects, solving the issue from the previous lecture. RPCs allow
+    clients to <strong>send messages </strong>to the server (or vice versa) to run
+    specific functions.</p><p>We added an <strong>[Rpc(SendTo.Server)]</strong> attribute
+    to the ClickedOnGridPositionRpc function, ensuring it only executes on the server.
+    We also renamed the function to include \"<strong>Rpc</strong>\" at the end,
+    as required. To enable RPC functionality, we updated the script to inherit from
+    <strong>NetworkBehaviour </strong>instead of MonoBehaviour and ensured the object
+    had a <strong>NetworkObject </strong>component.</p><p>After implementing and
+    testing, the client now sends a message to the server when clicking, and the
+    server spawns the object, maintaining <strong>server authority.</strong> Next,
+    we\u2019ll address synchronizing the object\u2019s position using the <strong>NetworkTransform
+    </strong>component.</p>\r\n<p>C# Course - Attributes [10:37:28] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=38248\"
+    target=\"_blank\" style=\"background-color: rgb(255, 255, 255);\">https://youtu.be/qZpMX8Re_2Q?t=38248</a></p>\r\n##REF##video_small,
+    qZpMX8Re_2Q, Learn C# FREE Tutorial Course Beginner to Advanced! [12 HOURS]##REF##\r\n"

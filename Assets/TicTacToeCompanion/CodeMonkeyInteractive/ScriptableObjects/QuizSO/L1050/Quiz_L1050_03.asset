@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1050_03
+  m_EditorClassIdentifier: 
+  question: What must be appended to the name of an RPC function?
+  optionList:
+  - Server
+  - Rpc
+  - Netcode
+  - Function
+  correctOptionIndex: 1
+  answer: The Rpc suffix is required for Unity to recognize the method as an RPC.
+    Along with NetworkBehaviour, NetworkObject and the Rpc attribute.

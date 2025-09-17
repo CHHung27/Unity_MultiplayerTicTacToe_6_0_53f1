@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1060_05
+  m_EditorClassIdentifier: 
+  question: What feature of NetworkTransform ensures smooth movement of objects?
+  optionList:
+  - Object pooling
+  - Network interpolation
+  - Client prediction
+  - Rigidbody2D synchronization
+  correctOptionIndex: 1
+  answer: "NetworkTransform automatically interpolates an object\u2019s movement
+    to create smooth transitions between positions. The helps the game look smooth
+    even if you use a low tick rate."

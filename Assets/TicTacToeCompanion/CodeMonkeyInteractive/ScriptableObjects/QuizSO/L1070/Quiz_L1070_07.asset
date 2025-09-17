@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1070_07
+  m_EditorClassIdentifier: 
+  question: What problem occurs when the client spawns the wrong object, and how
+    is it solved?
+  optionList:
+  - "The RPC runs on the server but accesses the wrong data; it\u2019s solved by
+    passing PlayerType as a parameter"
+  - "The client uses the wrong prefab; it\u2019s solved by correcting the prefab
+    reference"
+  - "The network object isn\u2019t synchronized; it\u2019s solved by adding NetworkTransform"
+  - "The client doesn\u2019t have permissions; it\u2019s solved by assigning server
+    authority"
+  correctOptionIndex: 0
+  answer: The RPC initially accesses the server's PlayerType instead of the client's.
+    Passing PlayerType as a parameter solves this issue.

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L0010_01
+  m_EditorClassIdentifier: 
+  question: What is the main goal of this course?
+  optionList:
+  - To create a multiplayer top-down shooter
+  - To build a simple multiplayer Tic Tac Toe game and learn the basics of multiplayer
+    development
+  - To master Unity's animation system
+  - To design advanced multiplayer UI systems
+  correctOptionIndex: 1
+  answer: "The course is focused on creating a simple multiplayer Tic Tac Toe game
+    as a learning project for multiplayer basics. \nThis is a great beginner project
+    but still requires learning quite a lot about Multiplayer game development that
+    is then applicable to any game you want to make."

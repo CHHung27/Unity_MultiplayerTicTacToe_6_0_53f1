@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1130_GameOverUI
+  m_EditorClassIdentifier: 
+  lectureCode: 1130
+  lectureSectionNumber: 13
+  lectureName: GameOverUI
+  lectureTitle: Game Over UI
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 753f1332d5f45c845a549915dec4c596,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 561160e65f6cfb04b831743506f35669, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: '<h1>Lecture Summary: Game Over UI</h1><p>In this lecture,
+    we created a Game Over UI to display the <strong>game result </strong>when a
+    player wins. The UI includes a text element ("YOU WIN!" or "YOU LOSE!") and a
+    background. The result text dynamically changes based on the game outcome, including
+    customizable colors for wins and losses.</p><p>We added a <strong>GameOverUI
+    </strong>script with functions to show and hide the UI and listened to the <strong>OnGameWin
+    </strong>event in the GameManager. When a win is detected, the script checks
+    if the local player is the winner and updates the UI accordingly.</p><p>To synchronize
+    the game-ending event across clients, we implemented an <strong>RPC </strong>that
+    sends the winning line index and the winning player type. This avoids <strong>serialization
+    issues </strong>by using indices instead of custom types. The client uses the
+    <strong>line index </strong>to access the same data as the server and displays
+    the correct result.</p><p>After testing, the Game Over UI correctly shows "YOU
+    WIN!" or "YOU LOSE!" for both the host and client, depending on the result.</p>
+
+'

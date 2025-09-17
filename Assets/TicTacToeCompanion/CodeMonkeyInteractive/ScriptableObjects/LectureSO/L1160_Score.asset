@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1160_Score
+  m_EditorClassIdentifier: 
+  lectureCode: 1160
+  lectureSectionNumber: 16
+  lectureName: Score
+  lectureTitle: Score
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 5455d917c53c8084e9d2f86fe9adab44,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 67df7dc763aa8784d82f5102607ad66f, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: '<h1>Lecture Summary: Score Tracking</h1><p>In this lecture,
+    we implemented a system to <strong>track </strong>each player''s <strong>total
+    score </strong>across multiple games. Using NetworkVariables, we ensured that
+    the score is synchronized across all clients.</p><p>We replaced simple int variables
+    with <strong>NetworkVariable<int> </strong>for playerCrossScore and playerCircleScore.
+    This ensures the score updates on both the server and all connected clients.</p><p>When
+    a player wins, the server increments the respective player''s score and updates
+    the NetworkVariable.</p><p>In the GameManager, we created a <strong>GetScores()
+    </strong>function using <strong>out </strong>parameters to allow retrieving both
+    scores simultaneously. This keeps the UI logic clean and independent of networking
+    logic.</p><p>To handle network delays, we attached listeners to the <strong>OnValueChanged
+    </strong>delegate of the score NetworkVariables. This ensures the UI updates
+    as soon as the scores are synchronized across clients.</p><p>We added score text
+    elements to the PlayerUI and updated them whenever the scores change.</p><p>After
+    testing, the scores now update correctly and remain in sync across the host and
+    client, even after a small delay caused by network communication. This ensures
+    a smooth multiplayer experience.</p>
+
+    <p>C# Course - ref, out, in [10:08:14]
+    <a href="https://youtu.be/qZpMX8Re_2Q?t=36495" target="_blank" style="background-color:
+    rgb(255, 255, 255);">https://youtu.be/qZpMX8Re_2Q?t=36495</a></p>
+
+    ##REF##video_small,
+    qZpMX8Re_2Q, Learn C# FREE Tutorial Course Beginner to Advanced! [12 HOURS]##REF##
+
+'

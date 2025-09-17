@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1120_TestWinnerFunction
+  m_EditorClassIdentifier: 
+  lectureCode: 1120
+  lectureSectionNumber: 12
+  lectureName: TestWinnerFunction
+  lectureTitle: Test Winner Function
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 964ad30bba4b0354495afc9175477ab5,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 30d29118a624e6d4a99698f4f331cc7b, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: Test Winner Function</h1><p>In this lecture,
+    we implemented the TestWinner() function to determine when a player wins the
+    game by aligning <strong>three symbols in a row.</strong> We started by checking
+    grid positions for horizontal, vertical, and diagonal wins, using a helper function
+    TestWinnerLine() to evaluate if all three positions match a player type and are
+    not empty.</p><p>To improve the code\u2019s structure, we defined a <strong>struct
+    </strong>for <strong>Line </strong>to represent possible win conditions and created
+    a <strong>List<Line></strong> to store all <strong>possible winning combinations.</strong>
+    This setup allows us to dynamically check for wins by iterating through the list
+    rather than copy pasting tons of code.</p><p>We added a green visual line for
+    winning rows, spawning it on the network when a win is detected. An enum for
+    Orientation was introduced to handle line rotations (horizontal, vertical, and
+    diagonal). Testing confirmed the system works perfectly for all win types.</p><p>With
+    the win condition complete, the next step is to create a proper game over screen.
+    Let\u2019s handle that in the next lecture!</p>\r\n<p>C# Course - Value Types
+    vs Reference Types [05:26:33] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=19594\"
+    target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=19594</a></p><p>C# Course -
+    Struct [05:35:45] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=20146\" target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=20146</a></p>\r\n##REF##video_small,
+    qZpMX8Re_2Q, Learn C# FREE Tutorial Course Beginner to Advanced! [12 HOURS]##REF##\r\n"

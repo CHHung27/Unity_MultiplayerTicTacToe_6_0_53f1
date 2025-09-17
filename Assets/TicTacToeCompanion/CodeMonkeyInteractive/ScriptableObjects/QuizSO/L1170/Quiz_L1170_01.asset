@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1170_01
+  m_EditorClassIdentifier: 
+  question: What is the purpose of adding sound effects and music to the game?
+  optionList:
+  - To improve game logic
+  - To enhance the player's experience by adding some nice sounds
+  - To increase network performance
+  - To reduce the game's file size
+  correctOptionIndex: 1
+  answer: Sound effects and music enhance the player's experience, they're a crucial
+    part of any game.

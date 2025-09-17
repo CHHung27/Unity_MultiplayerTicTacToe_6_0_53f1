@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1080_PlayerUI
+  m_EditorClassIdentifier: 
+  lectureCode: 1080
+  lectureSectionNumber: 8
+  lectureName: PlayerUI
+  lectureTitle: Player UI
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 228d9b4be06e3b94bacb3fdea0cb55b6,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 40ffc2d2d3a6b984e8e6e6aff9f0e957, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: Player UI and Canvas Setup</h1><p>In
+    this lecture, we created a <strong>Player UI </strong>to display the current
+    player and their turn. We started by setting up a <strong>Canvas </strong>with
+    a scalable resolution to ensure compatibility across different screen sizes.
+    The UI includes Cross and Circle icons with \"YOU\" labels and arrows to indicate
+    the active player.</p><p>We wrote a PlayerUI script that <strong>listens for
+    events </strong>in the GameManager, such as when the game starts and when the
+    turn changes. Using <strong>clean code principles</strong>, we utilized private
+    serialized fields for the UI elements and fired events like <strong>OnGameStarted
+    </strong>and <strong>OnCurrentPlayerTypeChanged </strong>to update the UI dynamically.</p><p>To
+    synchronize the game state across the server and clients, we implemented an RPC
+    <strong>([Rpc(SendTo.ClientsAndHost)]) </strong>to notify all clients when the
+    game starts. This resolved initial synchronization issues, ensuring both the
+    server and client displayed the correct \"YOU\" and arrow indicators.</p><p>While
+    the turn updates correctly on the server, we noticed that the turn arrows didn\u2019t
+    update on the client. In the next lecture, we\u2019ll explore <strong>Network
+    Variables </strong>to solve this issue and ensure seamless synchronization of
+    turn changes across all players.</p>\r\n"

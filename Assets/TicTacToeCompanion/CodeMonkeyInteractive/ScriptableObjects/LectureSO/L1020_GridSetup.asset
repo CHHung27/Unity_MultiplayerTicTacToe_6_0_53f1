@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1020_GridSetup
+  m_EditorClassIdentifier: 
+  lectureCode: 1020
+  lectureSectionNumber: 2
+  lectureName: GridSetup
+  lectureTitle: Grid Setup
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 479bb6d5bc21a874c85dd3867b0ddad0,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 29f7c7b604101b24e9cdd9f1851297f6, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: Grid Setup</h1><p>In this lecture, we
+    set up a clickable grid for our Tic Tac Toe game. Starting with visuals, we created
+    a grid using sprites and <strong>BoxCollider2D </strong>components to detect
+    clicks with <strong>OnMouseDown(). </strong>Each grid position was turned into
+    a prefab for easier management and named systematically (GridPosition_0_0, GridPosition_0_1,
+    etc).</p><p>We wrote a GridPosition script to handle clicks using Unity's OnMouseDown
+    function, ensuring the object had a 2D collider. As an alternative, we briefly
+    covered using the <strong>IPointerDownHandler </strong>interface with a Physics2D
+    raycaster but stuck with the simpler method.</p><p>Finally, we added <strong>X
+    </strong>and <strong>Y </strong>coordinates to each grid position using <strong>private
+    </strong>fields with the <strong>[SerializeField] </strong>attribute, allowing
+    us to log the exact grid position clicked. With this setup, we\u2019re ready
+    to move into multiplayer synchronization in the next steps!</p>\n<p>Why you should
+    NOT make everything PUBLIC!</span><a href=\"https://www.youtube.com/watch?v=pD27YuJG3L8\"
+    target=\"_blank\" style=\"background-color: rgb(255, 255, 255);\">https://www.youtube.com/watch?v=pD27YuJG3L8</a></p>\n##REF##video_small,
+    pD27YuJG3L8, Why you should NOT make everything PUBLIC!##REF##\r\n"

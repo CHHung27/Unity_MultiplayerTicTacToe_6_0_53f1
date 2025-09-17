@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1040_GameVisualManagerSpawnObjects
+  m_EditorClassIdentifier: 
+  lectureCode: 1040
+  lectureSectionNumber: 4
+  lectureName: GameVisualManagerSpawnObjects
+  lectureTitle: Game Visual Manager, Spawn Objects
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 5f1b3c6a65be4d341b0dc346d3ee3f1d,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 0f8288095f0aaea419c4b8708a2c86da, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: Game Visual Manager and Spawning Objects</h1><p>In
+    this lecture, we created a <strong>GameVisualManager </strong>class to handle
+    visual elements like spawning crosses and circles, ensuring a <strong>clean separation
+    </strong>of logic and visuals. Following best practices, we made the visuals
+    child objects of empty parent game objects, keeping things organized.</p><p>We
+    used <strong>events </strong>to decouple the GameManager from the GameVisualManager,
+    triggering visual updates when a grid position was clicked. A helper function
+    converted grid positions to world positions for correctly placing objects.</p><p>For
+    multiplayer synchronization, we added a <strong>NetworkObject </strong>component
+    to the prefabs and called the <strong>Spawn() </strong>function to ensure objects
+    were synchronized across all clients. However, only the server can spawn objects,
+    enforcing server authority which is a key concept in multiplayer game development.
+    We\u2019ll explore how to handle client-to-server communication using <strong>RPCs
+    </strong>in the next lecture.</p>\r\n<p>What is the DIFFERENCE between Transform
+    and GameObject? (Unity Tutorial for Beginners) <a href=\"https://www.youtube.com/watch?v=B-dVf9wUEbg\"
+    target=\"_blank\">https://www.youtube.com/watch?v=B-dVf9wUEbg</a></p><p>C# Course
+    - Events [6:39:07] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=23947\" target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=23947</a></p><p>C#
+    Course - Constants [7:04:40] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=25480\"
+    target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=25480</a></p>\r\n##REF##video_small,
+    B-dVf9wUEbg, What is the DIFFERENCE between Transform and GameObject? (Unity
+    Tutorial for Beginners)##REF##\r\n##REF##video_small, qZpMX8Re_2Q, Learn C# FREE
+    Tutorial Course Beginner to Advanced! [12 HOURS]##REF##\r\n"

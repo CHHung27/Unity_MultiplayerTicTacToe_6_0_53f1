@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1180_LobbyRelayOtherMultiplayerTools
+  m_EditorClassIdentifier: 
+  lectureCode: 1180
+  lectureSectionNumber: 18
+  lectureName: LobbyRelayOtherMultiplayerTools
+  lectureTitle: Lobby, Relay, Other Multiplayer Tools
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 40abe3ab853a5ae4dbdbe53dbd40e17c,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 59ea721bed00b73438217ac0543e1d3f, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: '<h1>Lecture Summary: Lobby, Relay, and Other Multiplayer Tools</h1><p>In
+    this lecture, we integrated <strong>Unity Lobby</strong> and <strong>Relay</strong>
+    services into our game, making it easier for players to connect without worrying
+    about firewalls or manual IP setup or NAT issues. These tools enhance the multiplayer
+    experience by streamlining player connection setup.</p>
+
+    <strong>Unity Lobby:</strong>
+
+    -
+    Allows players to group together in a lobby before starting a game.
+
+    - Players
+    can create or join lobbies with options like lobby name, player limits, and game
+    mode.
+
+    - The lobby automatically transitions to the game when enough players
+    join.
+
+    - We implemented lobby functionality using Unity''s Lobb, with features
+    like lobby creation, refresh, and join.
+
+    
+
+    <strong>Unity Relay:</strong>
+
+    -
+    Simplifies multiplayer connectivity by acting as a middleman server to bypass
+    firewalls and NAT.
+
+    - Eliminates the need for players to open ports or configure
+    firewalls.
+
+    - Introduced a <strong>Relay Join Code</strong>, which clients
+    can use to connect to the Relay server, although in this case that is all automatically
+    handled by the LobbyManager.
+
+    - While Relay may increase ping slightly due
+    to the additional hop, it ensures reliable connections for all players.
+
+    
+
+    <strong>Implementation:</strong>
+
+    -
+    The Lobby Manager handles authentication, lobby creation, polling for updates,
+    and joining lobbies.
+
+    - The Relay service allocates a server, generates
+    a join code, and facilitates seamless player connections.
+
+    - By combining
+    these tools with <strong>Netcode for GameObjects</strong>, our game is now easy
+    to play for anyone, regardless of their network configuration.
+
+    
+
+    <strong>Other
+    Tools:</strong>
+
+    - Mentioned other Unity multiplayer tools like Matchmaker
+    (automated player matchmaking), Game Server Hosting (dedicated servers), and
+    Vivox (voice and text chat).
+
+    - Highlighted the benefits of Unity''s Analytics
+    and Leaderboards for broader game features.
+
+    
+
+    <b>Key Benefits:</b>
+
+    Players
+    can now join games effortlessly using lobbies and connect reliably through Relay.
+
+    No
+    need for manual IP setup or port forwarding, making the game more accessible
+    to all players.
+
+    
+
+    <p>With Lobby and Relay implemented, our game is
+    now a robust and fully functional multiplayer experience!</p>
+
+    
+
+    <p>Lobby
+    Tutorial <a href="https://unitycodemonkey.com/video.php?v=-KDlEBfCBiU" target="_blank">https://unitycodemonkey.com/video.php?v=-KDlEBfCBiU</a></p><p>Relay
+    Tutorial <a href="https://unitycodemonkey.com/video.php?v=msPNJ2cxWfw" target="_blank">https://unitycodemonkey.com/video.php?v=msPNJ2cxWfw</a></p><p>Other
+    Multiplayer Tools <a href="https://unitycodemonkey.com/video.php?v=PCd3yp_VZ-c"
+    target="_blank">https://unitycodemonkey.com/video.php?v=PCd3yp_VZ-c</a></p>
+
+    ##REF##video_small,
+    -KDlEBfCBiU, Making a MULTIPLAYER Game? Join your Players with LOBBY!##REF##
+
+    ##REF##video_small,
+    msPNJ2cxWfw, How to use Unity Relay, Multiplayer through FIREWALL!##REF##
+
+    ##REF##video_small,
+    PCd3yp_VZ-c, Making MULTIPLAYER Games has never been EASIER!##REF##
+
+'

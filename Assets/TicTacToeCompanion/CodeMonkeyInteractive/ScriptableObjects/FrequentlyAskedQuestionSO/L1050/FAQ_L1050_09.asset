@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77bfb2ebc4ee664ab63408f6b18e046, type: 3}
+  m_Name: FAQ_L1050_09
+  m_EditorClassIdentifier: 
+  title: Can RPCs be used to send messages from the server to the client?
+  text: Yes, RPCs can be used to send messages in either direction, depending on
+    the SendTo parameter. For example, SendTo.Client sends a message from the server
+    to a specific client.

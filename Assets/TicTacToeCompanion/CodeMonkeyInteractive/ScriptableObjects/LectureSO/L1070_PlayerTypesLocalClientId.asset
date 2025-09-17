@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1070_PlayerTypesLocalClientId
+  m_EditorClassIdentifier: 
+  lectureCode: 1070
+  lectureSectionNumber: 7
+  lectureName: PlayerTypesLocalClientId
+  lectureTitle: Player Types, LocalClientId
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: fddf03a0634ee334f93b37a31068516c,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 76ff2effbddfc7049bb90a442f557c2d, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: '<h1>Lecture Summary: Player Types and LocalClientId</h1><p>In
+    this lecture, we defined <strong>player types </strong>and used the <strong>LocalClientId
+    </strong>to assign roles to players. The server is assigned as the "<i>Cross</i>"
+    player, and the client becomes the "<i>Circle</i>" player. We achieved this by
+    creating an <strong>enum </strong>called PlayerType with values None, Cross,
+    and Circle, ensuring clean and robust type management.</p><p>Using the <strong>OnNetworkSpawn
+    </strong>callback in a NetworkBehaviour, we determined whether the local client
+    is the server (Id 0) or a client (Id 1) and assigned the appropriate player type.
+    When objects are spawned, their type is now determined by the player''s role.</p><p>To
+    enforce turn-based gameplay, we introduced a <strong>currentPlayablePlayerType
+    </strong>field on the server. The game only allows actions from the player whose
+    turn it is, updating the turn after each move. With these improvements, the game
+    now enforces player roles and turn-taking properly.</p>
+
+    <p>C# Course -
+    Enums [04:30:13] <a href="https://youtu.be/qZpMX8Re_2Q?t=16214" target="_blank">https://youtu.be/qZpMX8Re_2Q?t=16214</a></p><p>C#
+    Course - Data Types [01:39:17] <a href="https://youtu.be/qZpMX8Re_2Q?t=5957"
+    target="_blank">https://youtu.be/qZpMX8Re_2Q?t=5957</a></p><p>C# Course - Value
+    vs Reference Types [05:26:33] <a href="https://youtu.be/qZpMX8Re_2Q?t=19593"
+    target="_blank">https://youtu.be/qZpMX8Re_2Q?t=19593</a></p>
+
+    ##REF##video_small,
+    qZpMX8Re_2Q, Learn C# FREE Tutorial Course Beginner to Advanced! [12 HOURS]##REF##
+
+'

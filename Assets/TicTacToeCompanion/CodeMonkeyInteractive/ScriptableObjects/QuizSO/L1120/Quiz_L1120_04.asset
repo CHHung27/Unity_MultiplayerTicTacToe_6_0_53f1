@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1120_04
+  m_EditorClassIdentifier: 
+  question: What does the OnGameWin event do?
+  optionList:
+  - Ends the game immediately
+  - Triggers when a win is detected and provides data about the winning line
+  - Synchronizes the board state
+  - Resets the game board
+  correctOptionIndex: 1
+  answer: The OnGameWin event is triggered when a win is detected and provides information
+    about the winning line which the visual script then uses to display a winning
+    line.

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L0010_Intro
+  m_EditorClassIdentifier: 
+  lectureCode: 10
+  lectureSectionNumber: 0
+  lectureName: Intro
+  lectureTitle: Intro
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: f7bfe3002ef1a33419022d70d10fa81a,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 95b59564f0b0f5647ab30ec21e52e9c7, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: Intro to Simple Multiplayer Tic Tac Toe</h1><p>Hello
+    and Welcome, I'm your Code Monkey!</p><p>Welcome to my Simple Multiplayer Tic
+    Tac Toe course!</p><p>Here we\u2019ll build a straightforward multiplayer game
+    from scratch, focusing on core multiplayer concepts like synchronizing data between
+    players, hosting connections, and managing turns. While the game design is basic,
+    it\u2019s perfect for learning the foundations you can later apply to create
+    games like <strong>Among Us </strong>or Overcooked.</p><p></p><p>This course
+    uses Unity\u2019s <b>Netcode for GameObjects</b>, ideal for small-scale co-op
+    games. The <strong>Project Files </strong>are included for every lecture in the
+    course, if you get stuck you can download those and compare them with your own.</p><p>Also
+    make sure to do all the <strong>Quizzes </strong>and <strong>FAQs </strong>for
+    every lecture to ensure you're really learning. The <strong>companion project
+    </strong>also has a window to <strong>Chat with an AI </strong>that was trained
+    on the contents of the course and a window that is constantly monitoring your
+    project for <strong>possible mistakes </strong>and showcasing potential solutions.</p><p>Join
+    the <strong>Private Discord </strong>and join me on the <strong>Private Livestreams
+    </strong>every Saturday.</p><p>Thanks and I hope you learn a lot in this course!</p>\n<p>Learn
+    C# FREE Tutorial Course Beginner to Advanced! [12 HOURS] <a href=\"https://www.youtube.com/watch?v=qZpMX8Re_2Q\"
+    target=\"_blank\">https://www.youtube.com/watch?v=qZpMX8Re_2Q</a></p><p>Learn
+    Unity Beginner/Intermediate 2024 (FREE COMPLETE Course - Unity Tutorial) <a href=\"https://www.youtube.com/watch?v=AmGSEH7QcDg\"
+    target=\"_blank\">https://www.youtube.com/watch?v=AmGSEH7QcDg</a></p><p>Learn
+    Unity Multiplayer (FREE Complete Course, Netcode for Game Objects Unity Tutorial
+    2024) <a href=\"https://www.youtube.com/watch?v=7glCsF9fv3s\" target=\"_blank\">https://www.youtube.com/watch?v=7glCsF9fv3s</a></p><p>Getting
+    Started with Netcode for Entities! (DOTS Multiplayer Tutorial Unity 6) <a href=\"https://unitycodemonkey.com/video.php?v=HpUmpw_N8BA\"
+    target=\"_blank\">https://unitycodemonkey.com/video.php?v=HpUmpw_N8BA</a></p>\n##REF##video_small,
+    qZpMX8Re_2Q, Learn C# FREE Tutorial Course Beginner to Advanced! [12 HOURS]##REF##\r\n##REF##video_small,
+    AmGSEH7QcDg, Learn Unity Beginner/Intermediate (FREE COMPLETE Course - Unity
+    Tutorial)##REF##\r\n##REF##video_small, 7glCsF9fv3s, Learn Unity Multiplayer
+    (FREE Complete Course, Netcode for Game Objects Unity Tutorial)##REF##\r\n##REF##video_small,
+    HpUmpw_N8BA, Getting Started with Netcode for Entities! (DOTS Multiplayer Tutorial
+    Unity 6)##REF##\r\n"

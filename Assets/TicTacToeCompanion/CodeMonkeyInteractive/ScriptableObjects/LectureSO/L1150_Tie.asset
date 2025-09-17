@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1150_Tie
+  m_EditorClassIdentifier: 
+  lectureCode: 1150
+  lectureSectionNumber: 15
+  lectureName: Tie
+  lectureTitle: Tie
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: bb82ae40bb7c9ee4999dd294b19c4aed,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 162c9e520f40bad43b2dc86d8962e979, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: '<h1>Lecture Summary: Tie Condition</h1><p>In this lecture,
+    we implemented logic to handle Tie conditions in the game. A tie occurs when
+    <strong>all grid positions are occupied</strong>, and <strong>no player has won</strong>.
+    Here''s how we did it:</p><p><strong>Updated the TestWinner Function:</strong></p><p>After
+    checking for a winner, we added logic to detect a tie by cycling through the
+    entire playerTypeArray. If any position contains PlayerType.None, it''s not a
+    tie. If no empty slots remain, we trigger a tie event using an RPC (TriggerOnGameTieRpc).</p><p><strong>Fire
+    an Event:</strong></p><p>We created an event for ties and used it to notify other
+    parts of the game when a tie occurs.</p><p><strong>Update the UI:</strong></p><p>The
+    GameOverUI listens to the tie event and updates the message to indicate a tie.
+    We also added a unique text and color for tie scenarios to differentiate them
+    from win/loss outcomes.</p><p>Testing confirmed that the tie logic works perfectly.
+    When all grid positions are occupied without a winner, the UI displays the tie
+    message correctly. Great work!</p>
+
+'

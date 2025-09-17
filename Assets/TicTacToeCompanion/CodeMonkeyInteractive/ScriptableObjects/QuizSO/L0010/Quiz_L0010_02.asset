@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L0010_02
+  m_EditorClassIdentifier: 
+  question: What is the key concept of multiplayer games discussed in the lecture?
+  optionList:
+  - Advanced AI systems
+  - Synchronizing data between clients
+  - Complex graphics rendering
+  - Creating immersive audio experiences
+  correctOptionIndex: 1
+  answer: "Multiplayer games are basically all about synchronizing data between clients.
+    Different genres just synchronize different data but the core concepts remain
+    the same. \nTherefore learning to make a basic game like this one will be helpful
+    in making all kinds of multiplayer games."

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1150_03
+  m_EditorClassIdentifier: 
+  question: What indicates a tie when checking the playerTypeArray?
+  optionList:
+  - At least one grid position is PlayerType.Cross
+  - All grid positions are set to PlayerType.None
+  - The first row contains only circles
+  - All grid positions are filled with no PlayerType.None
+  correctOptionIndex: 3
+  answer: A tie is detected when all grid positions in the playerTypeArray are filled,
+    with no positions left as PlayerType.None.

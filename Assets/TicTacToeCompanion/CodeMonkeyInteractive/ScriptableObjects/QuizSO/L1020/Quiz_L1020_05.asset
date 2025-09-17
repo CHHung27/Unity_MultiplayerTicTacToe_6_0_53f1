@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1020_05
+  m_EditorClassIdentifier: 
+  question: Why is the SerializeField attribute used for grid position coordinates?
+  optionList:
+  - To make the fields public
+  - To keep fields private but editable in the Unity Editor
+  - To enable network synchronization
+  - To improve runtime performance
+  correctOptionIndex: 1
+  answer: '[SerializeField] allows private fields to be edited in the Unity Editor
+    while keeping them inaccessible to other classes. The most basic clean code principle
+    is to minimize access as much as possible, so if a field is only meant to be
+    used by one class it should be private. There''s almost no reason to make a field
+    public.'

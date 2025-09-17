@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1010_01
+  m_EditorClassIdentifier: 
+  question: What Unity version is used in this tutorial?
+  optionList:
+  - Unity 5
+  - Unity 6
+  - Unity 2021
+  - Unity 7
+  correctOptionIndex: 1
+  answer: Unity 6 which is the latest version as I'm recording this course. Even
+    if you're watching this in the future I highly recommend you use the same version
+    as me just to avoid any confusion. Although Netcode for Game Objects and Unity
+    itself is already very robust so I'm guessing this course will still be up to
+    date even many years from now.

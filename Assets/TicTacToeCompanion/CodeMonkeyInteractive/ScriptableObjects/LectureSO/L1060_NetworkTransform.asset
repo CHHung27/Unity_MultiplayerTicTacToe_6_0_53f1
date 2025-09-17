@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1060_NetworkTransform
+  m_EditorClassIdentifier: 
+  lectureCode: 1060
+  lectureSectionNumber: 6
+  lectureName: NetworkTransform
+  lectureTitle: Network Transform
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: bbb91de1e15bc844a8d919ffe1f2d629,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 31fb75997bbe51c47bf0ba857037b347, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: NetworkTransform</h1><p>In this lecture,
+    we learned how to synchronize the transform data of spawned objects across the
+    network using <strong>NetworkTransform</strong>, a built-in Netcode component.
+    Without this, objects spawn at their initial position but don\u2019t sync updates
+    like position changes across clients.</p><p>The NetworkTransform component makes
+    <strong>synchronizing data </strong>like position, rotation, and scale effortless.
+    You can customize what data to sync to <strong>save bandwidth</strong>, which
+    is crucial in multiplayer games. For our Tic Tac Toe game, we only need to sync
+    the X and Y positions.</p><p>After adding the NetworkTransform component, we
+    tested the setup, and object positions updated correctly across clients. We also
+    adjusted the spawning process to set the correct position during instantiation,
+    ensuring objects appear instantly at their target positions without interpolation.
+    With this in place, our object synchronization is smooth and efficient!</p>\r\n"

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1030_GameManagerSingletonPattern
+  m_EditorClassIdentifier: 
+  lectureCode: 1030
+  lectureSectionNumber: 3
+  lectureName: GameManagerSingletonPattern
+  lectureTitle: Game Manager, Singleton Pattern
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 44695556befa5264aa86c71e381b5b43,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 1609fb2e88aacea488aaf056fbf01d70, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: GameManager and Singleton Pattern</h1><p>In
+    this lecture, we created a <strong>GameManager </strong>class to handle the core
+    game logic and learned about the <strong>Singleton pattern </strong>to ensure
+    clean and efficient code. Instead of dragging multiple references for each grid
+    position, the singleton pattern allows us to maintain a single instance of the
+    GameManager that's globally accessible.</p><p>We implemented the singleton by
+    defining a <strong>static Instance </strong>property with a <strong>public getter
+    </strong>and a <strong>private setter</strong>. The Instance is initialized in
+    the Awake method and includes a safety check to ensure only one instance exists.</p><p>With
+    this setup, the grid positions can call <strong>GameManager.Instance.ClickedOnGridPosition(x,
+    y)</strong> when clicked, allowing us to handle click events in the GameManager.
+    This approach keeps our <strong>code clean </strong>and avoids redundant references.
+    Everything is set up and working perfectly!</p>\r\n<p>C# Course - Singleton Pattern
+    [7:29:58] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=26998\" target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=26998</a></p><p>C#
+    Course - Static [3:21:01] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=12061\" target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=12061</a></p><p>C#
+    Course - Properties [4:38:07] <a href=\"https://youtu.be/qZpMX8Re_2Q?t=16687\"
+    target=\"_blank\">https://youtu.be/qZpMX8Re_2Q?t=16687</a></p>\n\r##REF##video_small,
+    qZpMX8Re_2Q, Learn C# FREE Tutorial Course Beginner to Advanced! [12 HOURS]##REF##\r\n"

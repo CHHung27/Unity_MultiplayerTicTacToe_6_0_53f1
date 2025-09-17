@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1040_8
+  m_EditorClassIdentifier: 
+  question: What is the purpose of the Spawn method in NetworkObject?
+  optionList:
+  - To instantiate the object locally
+  - To synchronize the object across all clients
+  - To destroy the object on the server
+  - To assign ownership to a specific client
+  correctOptionIndex: 1
+  answer: The Spawn method ensures that the object is synchronized across the server
+    and all connected clients. When the server calls Spawn(); on an object it will
+    automatically instantiate and spawn that same object on all connected clients.

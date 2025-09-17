@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1190_Polish
+  m_EditorClassIdentifier: 
+  lectureCode: 1190
+  lectureSectionNumber: 19
+  lectureName: Polish
+  lectureTitle: Polish
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: a2e81d868204ef142b4b379f608dd9fd,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: 343bf1a0e8fc4274b958d2227b74c762, type: 2}
+  exerciseListSO: {fileID: 0}
+  lectureDescription: "<h1>Lecture Summary: Polish</h1><p>In this lecture, we focused
+    on <strong>polishing the game</strong> to elevate it from functional to enjoyable,
+    adding small but impactful details to improve the player experience.</p>\r\n<b>Why
+    Polish Matters:</b><p>Polish is the step where you turn a \"good\" game into
+    a <strong>great</strong> one. \r\nThese finishing touches make the game feel
+    more professional, engaging, and memorable.</p>\r\n<b>Key Enhancements Added:</b>\r\n<strong>Visual
+    Effects:</strong>\r\n<strong>Particle Effects:</strong> Added subtle particles
+    in the background for a more dynamic feel.\r\n<strong>Object Placement Animation:</strong>\r\nAdded
+    squash-and-stretch animations using the <strong>FEEL Asset</strong> to make placing
+    crosses and circles more satisfying.\r\nEach object spawns with a small glow
+    and shake for added visual impact.<strong>Sprite Shader Effects:</strong>\r\nUsed
+    the <strong>All-in-One Sprite Shader</strong> to add outlines and blur effects
+    to objects.\r\nOutlines intensify when objects spawn, then fade out for a smooth
+    effect.<strong>UI Animations:</strong>\r\n<strong>GameOver Text:</strong>\r\nAnimated
+    the \"You Win\" and \"You Lose\" messages using the <strong>Text Animator</strong>
+    asset to create a playful wiggle effect.\r\n<strong>Buttons:</strong> Enhanced
+    button visuals with a polished UI pack for a cleaner look.\r\n<strong>Connecting
+    Screen:</strong>\r\nCreated a simple \"Connecting\" UI that appears while the
+    Relay connection is being established, adding clarity to the player experience.\r\n<strong>Post-Processing
+    Effects:</strong>\r\nAdded a <strong>bloom effect</strong> to make the crosses
+    and circles glow slightly.\r\nUsed <strong>vignette</strong> to subtly darken
+    the screen's corners, creating a more immersive visual style.\r\n<br>\r\n<strong>Lobby
+    Improvements:</strong>\r\nSimplified the lobby by removing unnecessary fields
+    (e.g., character types, game modes).\r\nMade it clean and minimal, showing only
+    the necessary information like lobby name and player count.\r\n<strong>General
+    Gameplay Improvements:</strong>\r\nAdded better transitions and feedback between
+    game states (e.g., rematch, game over).\r\nCleaned up redundant UI elements and
+    added subtle animations where necessary.\r\n<b>Implementation Notes:</b>\r\n<strong>Third-Party
+    Assets:</strong>\r\nWhile third-party assets like <strong>FEEL</strong>, <strong>All-in-One
+    Sprite Shader</strong>, and <strong>Text Animator</strong> were used, these cannot
+    be included in the shared project files due to licensing restrictions, I'm not
+    able to distribute them. However, I highly recommend these assets for quick and
+    effective polish in any game project.\r\n<strong>Code Highlights:</strong>\r\nUsed
+    <strong>feedback systems</strong> to trigger animations and sound effects during
+    gameplay.\r\nLeveraged <strong>animations and shaders</strong> to create dynamic
+    and appealing effects for a 2D game.\r\n\r\n<b>Final Results:</b>\r\nThe game
+    now <strong>feels</strong> more alive, dynamic, and fun to play.\r\nPolished
+    visuals, animations, and effects create a more professional and cohesive game.\r\nSmall
+    touches like post-processing and better UI/UX elevate the overall experience.\r\n<p>With
+    these polish improvements, the game is now not only fully functional but also
+    visually appealing and enjoyable for players. This completes the journey of building
+    a fully polished multiplayer game!</p>\r\n<p>FREE Asset Review <a href=\"https://unitycodemonkey.com/video.php?v=Kx2Pi8yAitw\"
+    target=\"_blank\">https://unitycodemonkey.com/video.php?v=Kx2Pi8yAitw</a></p><p>All
+    in 1 Sprite Shader Asset Review <a href=\"https://unitycodemonkey.com/video.php?v=fSDEcsVK2UY\"
+    target=\"_blank\">https://unitycodemonkey.com/video.php?v=fSDEcsVK2UY</a></p>\n##REF##video_small,
+    Kx2Pi8yAitw, Take your game from boring to AWESOME with this Tool! (FEEL Asset
+    Review)##REF##\r\n##REF##video_small, fSDEcsVK2UY, 50 Effects in 1 Shader! (Take
+    your game from boring to AWESOME!)##REF##"

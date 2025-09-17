@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1060_04
+  m_EditorClassIdentifier: 
+  question: What happens if the NetworkTransform component is not added to a networked
+    object?
+  optionList:
+  - The object cannot be spawned
+  - The transform data will not be synchronized across the network
+  - The object will not move
+  - The object will automatically synchronize
+  correctOptionIndex: 1
+  answer: Without NetworkTransform, changes to the object's transform data (like
+    position updates) will not be synchronized across clients. The object will remain
+    where it spawned forever on the client.

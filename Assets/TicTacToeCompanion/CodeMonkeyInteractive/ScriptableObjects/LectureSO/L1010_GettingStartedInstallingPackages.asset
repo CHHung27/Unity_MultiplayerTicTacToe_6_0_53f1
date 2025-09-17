@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a93b863ca8314695b382c0c8c2b3d, type: 3}
+  m_Name: L1010_GettingStartedInstallingPackages
+  m_EditorClassIdentifier: 
+  lectureCode: 1010
+  lectureSectionNumber: 1
+  lectureName: GettingStartedInstallingPackages
+  lectureTitle: Getting Started, Installing Packages
+  frequentlyAskedQuestionListSO: {fileID: 11400000, guid: 211a6877f2357fd4ea60c1eb534ff85b,
+    type: 2}
+  quizListSO: {fileID: 11400000, guid: bfe394a4ab74a60458c4e29c9777bd76, type: 2}
+  exerciseListSO: {fileID: 11400000, guid: 9f5628c5b75a4704a9976c95470b212b, type: 2}
+  lectureDescription: "<h1>Lecture Summary: Getting Started and Installing Packages</h1><p>In
+    this lecture, we set up the <strong>foundation </strong>for our Multiplayer Simple
+    Tic Tac Toe Game. We started by creating a new Unity project using the <strong>Universal
+    2D </strong>template (URP) and installing <strong>Netcode for GameObjects</strong>,
+    Unity\u2019s networking tool. The NetworkManager component was added to manage
+    multiplayer connections, and we explored the three main network topologies: Server,
+    Client, and Host.</p><p>To speed up testing, we installed the <strong>Multiplayer
+    Play Mode </strong>package, allowing us to simulate multiplayer connections directly
+    within Unity. We also added the <strong>Multiplayer Tools </strong>package and
+    used the RuntimeNetworkStatsMonitor to verify active connections. Finally, we
+    imported the visual assets to prepare for the next steps. Let\u2019s keep going!</p>\n<p>Unity
+    Multiplayer Docs <a href=\"https://docs-multiplayer.unity3d.com/\" target=\"_blank\">https://docs-multiplayer.unity3d.com/</a></p><p>Netcode
+    for Game Objects </span><a href=\"https://docs-multiplayer.unity3d.com/netcode/current/about\"
+    target=\"_blank\">https://docs-multiplayer.unity3d.com/netcode/current/about/</a></p><p>Multiplayer
+    Play Mode </span><a href=\"https://docs-multiplayer.unity3d.com/mppm/current/about\"
+    target=\"_blank\">https://docs-multiplayer.unity3d.com/mppm/current/about/</a></p><p>Multiplayer
+    Tools </span><a href=\"https://docs-multiplayer.unity3d.com/tools/current/about\"
+    target=\"_blank\">https://docs-multiplayer.unity3d.com/tools/current/about/</a></p>"

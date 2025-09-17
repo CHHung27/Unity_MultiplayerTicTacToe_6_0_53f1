@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf51161046453c40b9eaf63bfb19050, type: 3}
+  m_Name: Quiz_L1070_06
+  m_EditorClassIdentifier: 
+  question: How does the server ensure only the current player can take a turn?
+  optionList:
+  - By storing a currentPlayablePlayerType and checking it before allowing actions
+  - By sending RPCs to the client
+  - By disabling input on the client
+  - By locking the grid after every move
+  correctOptionIndex: 0
+  answer: The server tracks the currentPlayablePlayerType and ensures only the player
+    whose turn it is can make a move. Again, our game is server authoritative so
+    the server is the ultimate source of truth.
