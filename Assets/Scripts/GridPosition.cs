@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GridPosition : MonoBehaviour
 {
@@ -10,6 +10,6 @@ public class GridPosition : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        Debug.Log($"CLICKED ON {x}, {y}!");
+        GameManager.Instance.ClickedOnGridPosition(x, y);
     }
 }

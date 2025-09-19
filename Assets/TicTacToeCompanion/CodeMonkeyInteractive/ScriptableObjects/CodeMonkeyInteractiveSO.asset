@@ -52,6 +52,58 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: d2a26f2983b9a644c9d335298489e35f, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: 364fef74b4ce76640b1b0f762d3e9de3, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 13f7a6ab855855448ad8b47def89c03c, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: befef1c89889eee4083eadacb454a4fb, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 58eccc340db14f44db64c693f8528735, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: e1e1b2800b14e7b4b8ac607eb0d3f209, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 840a93b930dd8ab4d88cd60336141d87, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 006c110beafeccc4db1dbed92ca37027, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 9c2d7a15a2ff41746b978a64426c6f4f, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: fc56739aa49167e43ac954d419b89d4e, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: c8fd1c6cb70e0c34cbf2e64c8b0406dd, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 16e7b8099f3ba9743adc2cf4abc3ff75, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 3a39fa684404ece4a87184902cb9748d, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: c2e3b3d5904ad7b49aea0cb30868856b, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 165829584cd221b4d952838eca1c9090, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 27b290f2e6609cf4ea1f5c5814824f29, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 08454a2710f13e94bb10a977e16ebbac, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: e52330afa3840894e8eda858cc6cdee4, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 1315bf238b13fd84bbbd8f1c048b59b7, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 329ab0099e3b8ef46ac0b49fd200066a, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: c058769c37d17354a95d032646f1a9f9, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 4f63d529977d0fc47a0e677d7b62559c, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 38f145071eb467146ae6ab89bcd8e07b, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: b9fc8dafaaacd9d47b6704c0f62ec258, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 796e651c524ee8c48862721f5a384f1e, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 406187fd24e87ac44b942a7199dd8206, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 3277ac9f96345174eae6ddb0247eda8e, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -93,24 +145,75 @@ MonoBehaviour:
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 76df7369b227aad429a41b20242250fe, type: 2}
     state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 8645d02ae6e831244a4531a4a2512b53, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 3bd80b294d9ee194dbb3eaa3672559a8, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: b8fa133a2fdae744cb526d711a538f7f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: e0b410994a4c74041853f3ca58544034, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 86ea5fabd1db1ac49910adc0d646ca96, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: f4cde9317abf87d4c8da7e9d115ae42f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 29e6962ae965fc248a59f17e6a3df540, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 64a6f8b498234d440aa514146088472e, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 9bf03637b01b7414591ca5ecdc104eba, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: cdb4c1bbc9da5ab4eb5018affa03ce56, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 699bee4b492efaa47b3bc66f286bb474, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: b29edb5f7bb108e42bea0eddc2199cbd, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 78ca84e1d58c4f247bfeffefaefcdb68, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 9fcb2dce2c9513b44946cc52dc559d0e, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: c43b4a32b0fc682449a26e78e7272b3c, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 816607ce6494e0849b1d71e9c8ee152e, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: a4c63e51ce6346247a142f170ce7096b, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 4a82db9503c938a498bcc80e99451c17, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 46e5b81a9622d0b418d7d812c4bf180f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 67a7e1b9df9ff374781f9349fca08619, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 6d926474da04027478f11dc9a6a133f9, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 6cdb1f0ad93e1644fbd574c142bb38aa, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 79e815cfd237790448b121a53c03d64b, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 6f40815e812756946a197e3c552298b0, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: bbca8f49554e32c43a3abb2d04c8530c, type: 2}
+    state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: 2d13601def62df44780826d006349867, type: 2}
-  checkedLastUpdateTimestamp: 1758106014
+  lastSelectedLectureSO: {fileID: 11400000, guid: e40a622b62989ec419bd5299d2926f37, type: 2}
+  checkedLastUpdateTimestamp: 1758275215
   lastUpdateVersion: 1.01
   lastQOTDResponse:
-    questionId: 222
-    questionText: Which of these are affected when you modify Time.timeScale?
-    answerA: Time.deltaTime, Time.realtimeSinceStartup, Time.unscaledDeltaTime, Time.timeSinceLevelLoad,
-      Time.fixedTime
-    answerB: Time.deltaTime, Time.realtimeSinceStartup, Time.timeSinceLevelLoad,
-      Time.fixedTime
-    answerC: Time.deltaTime, Time.timeSinceLevelLoad, Time.fixedTime
+    questionId: 223
+    questionText: What is the difference between Application.dataPath and Application.persistentDataPath
+      on Windows?
+    answerA: No difference on Windows
+    answerB: Application.dataPath is the install folder and Application.persistentDataPath
+      is on the Registry
+    answerC: Application.dataPath is the install folder and Application.persistentDataPath
+      is on the User Data
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1758106014
+  lastQotdTimestamp: 1758275215
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -126,11 +229,11 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1758106014
+  websiteLatestMessageTimestamp: 1758275215
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1758106014
+  websiteDynamicMessageTimestamp: 1758275215
   websiteLatestVideos:
     videos:
     - youTubeId: zQb8oq9IMZs
@@ -141,7 +244,7 @@ MonoBehaviour:
       title: Was I WRONG about Silksong?
     - youTubeId: 8BIpWVsQFnQ
       title: TOP 10 NEW Games, Made with Unity! (AUGUST 2025)
-  websiteLatestVideosTimestamp: 1758106014
+  websiteLatestVideosTimestamp: 1758275215
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking
