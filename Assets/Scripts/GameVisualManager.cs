@@ -20,10 +20,12 @@ public class GameVisualManager : NetworkBehaviour
     private void GameManager_OnClickedOnGridPosition(object sender, GameManager.OnClickedOnGridPositionEventArgs e)
     {
         Debug.Log("GameManager_OnClickedOnGridPosition");
-        SpawnObjectRPC(e.x, e.y);
+        SpawnObjectRPC(e.x, e.y, e.playerType);
     }
 
     /// <summary>
+    /// Spawns cross or circle prefab based on playerType at provided location
+    /// 
     /// Server authority is a system where the server is the ultimate source of truth and manages critical actions
     /// This RPC method ensures that spawning object is always handled by the server only
     /// Server: spawns locally, syncs to client via NetworkObject
@@ -31,13 +33,25 @@ public class GameVisualManager : NetworkBehaviour
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>
+    /// <param name="playerType">must be included to pass playerType. As attempting to grab localPlayerType 
+    ///                          will return Cross every single time (since RPC runs on server only)</param>
     [Rpc(SendTo.Server)]  // SendTo parameter defines where the RPC will run
-    private void SpawnObjectRPC(int x, int y)
+    private void SpawnObjectRPC(int x, int y, GameManager.PlayerType playerType)
     {
         Debug.Log("SpawnObjectRPC");
-        Transform spawnedCrossTransform = Instantiate(crossPrefab);
-        spawnedCrossTransform.GetComponent<NetworkObject>().Spawn(true);
-        spawnedCrossTransform.position = GetGridWorldPosition(x, y);
+        Transform spawnedPrefab;
+        switch (playerType)
+        {
+            default:
+            case GameManager.PlayerType.Cross:
+                spawnedPrefab = crossPrefab;
+                break;
+            case GameManager.PlayerType.Circle:
+                spawnedPrefab = circlePrefab;
+                break;
+        }
+        Transform spawnedPrefabTransform = Instantiate(spawnedPrefab, GetGridWorldPosition(x, y), Quaternion.identity);
+        spawnedPrefabTransform.GetComponent<NetworkObject>().Spawn(true); // syncs Network Object across server/client
     }
 
     /// <summary>

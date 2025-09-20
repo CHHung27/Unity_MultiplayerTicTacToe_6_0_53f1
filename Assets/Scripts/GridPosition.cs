@@ -10,6 +10,6 @@ public class GridPosition : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        GameManager.Instance.ClickedOnGridPosition(x, y);
+        GameManager.Instance.ClickedOnGridPositionRPC(x, y, GameManager.Instance.GetLocalPlayerType());
     }
 }

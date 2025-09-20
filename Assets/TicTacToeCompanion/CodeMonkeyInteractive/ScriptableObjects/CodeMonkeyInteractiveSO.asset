@@ -104,6 +104,40 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: 3277ac9f96345174eae6ddb0247eda8e, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: d17bc84acf24afb4ea9e67449dbd9ce7, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 2f99bb0734db7d04b8ef1f3ce557e5f2, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: ac65178936671004690c7998a71f2f66, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: a60ffc16abc32754c9c428f0650a0290, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: bfcafabb8020dbe429ae5957635bc870, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: b82899778330ca14eb42342bbbc12065, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 1d6848f964160fc42904295892c5393e, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: d6faff24f06c1674e8c105a895c34cdd, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: e52f86864f15f6148b5b123acb3364ae, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: a4745af2cc738e94b9870a092fbf9ec2, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: e89d1c2cd8e617447a6950142ef732d3, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 15289664a1ab62d48b9f408578f4d944, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 573457440d8a3d246ae4ea25c4521be9, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: e1b791c18350d1940a6b115c0db1f14f, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 116701011914888489848ca2bcb8b737, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 32bcc2a526a94a54bb962d11b184f794, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 783cc304ca1926040b0237e95d1159ff, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -195,12 +229,36 @@ MonoBehaviour:
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: bbca8f49554e32c43a3abb2d04c8530c, type: 2}
     state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: a83100b4409ad2f42bb68041847c96c7, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 3abf77d45c7ae344898a6198343e187b, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 46945b9a8aacc5440a7c7ae9042d1467, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 319e15fee32f9d9419c48c3c3db7a0e6, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 87d53eac28050e34e9a1895bb45e74d9, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 440e1ef6b5f46a141ba1eb266f6cbdaa, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 92fd8bf5c046c6841918346600310f95, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 2f652d86fc68c9a409cb6610f9c156b6, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 7397032a9b17ef944ba59eba645590a7, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 8c7b6ead149f6014f9aa52979968ac93, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 5d48c7f9b2f54774bb8048a7cf4e60c2, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: e0ff2f511c0da56429a8a1af5f1b44d3, type: 2}
+    state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: e40a622b62989ec419bd5299d2926f37, type: 2}
-  checkedLastUpdateTimestamp: 1758275215
+  lastSelectedLectureSO: {fileID: 11400000, guid: c55e7087661ee6d46a0636a5eafefb5a, type: 2}
+  checkedLastUpdateTimestamp: 1758369274
   lastUpdateVersion: 1.01
   lastQOTDResponse:
     questionId: 223
@@ -213,7 +271,7 @@ MonoBehaviour:
       is on the User Data
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1758275215
+  lastQotdTimestamp: 1758369274
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -229,22 +287,22 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1758275215
+  websiteLatestMessageTimestamp: 1758369274
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1758275215
+  websiteDynamicMessageTimestamp: 1758369274
   websiteLatestVideos:
     videos:
+    - youTubeId: q-LGDkojs08
+      title: The BEST Systems to build to MASTER Programming Game Dev!
     - youTubeId: zQb8oq9IMZs
       title: Unity 6.3 is HERE!
     - youTubeId: 4tXBS87J0Po
       title: TOP 10 FREE NEW Assets SEPTEMBER 2025!
     - youTubeId: -LQ0C9B2bzQ
       title: Was I WRONG about Silksong?
-    - youTubeId: 8BIpWVsQFnQ
-      title: TOP 10 NEW Games, Made with Unity! (AUGUST 2025)
-  websiteLatestVideosTimestamp: 1758275215
+  websiteLatestVideosTimestamp: 1758369274
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking
