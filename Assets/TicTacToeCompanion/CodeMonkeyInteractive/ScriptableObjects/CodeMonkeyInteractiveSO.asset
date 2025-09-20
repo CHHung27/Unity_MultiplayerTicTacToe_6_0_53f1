@@ -257,7 +257,7 @@ MonoBehaviour:
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: c55e7087661ee6d46a0636a5eafefb5a, type: 2}
+  lastSelectedLectureSO: {fileID: 11400000, guid: 6fc759f58cb035a42971e7728e7e0b56, type: 2}
   checkedLastUpdateTimestamp: 1758369274
   lastUpdateVersion: 1.01
   lastQOTDResponse:
