@@ -19,6 +19,9 @@ public class GameManager : NetworkBehaviour
     private PlayerType localPlayerType;
     private PlayerType currentPlayablePlayerType;
 
+    public event EventHandler OnGameStarted; // fire this when both players joined; listened by PlayerUI
+    public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
+
     public event EventHandler<OnClickedOnGridPositionEventArgs> OnClickedOnGridPosition; // Event listened to by GameVisualManager
     public class OnClickedOnGridPositionEventArgs : EventArgs
     {
@@ -57,8 +60,29 @@ public class GameManager : NetworkBehaviour
         // initialize currentPlayablePlayerType, starting player turn flip-flop
         if (IsServer)
         {
-            currentPlayablePlayerType = PlayerType.Cross;
+            // runs whenever a client connects
+            NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
         }
+    }
+
+    /// <summary>
+    /// triggered whenever a client connects to the network
+    /// </summary>
+    /// <param name="obj"> id of the client connected </param>
+    private void NetworkManager_OnClientConnectedCallback(ulong obj)
+    {
+        if (NetworkManager.Singleton.ConnectedClientsList.Count == 2)
+        {
+            // start game if 2 players connected
+            currentPlayablePlayerType = PlayerType.Cross; // set server player to cross
+            TriggerOnGameStartedRPC();
+        }
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnGameStartedRPC()
+    {
+        OnGameStarted?.Invoke(this, EventArgs.Empty); // invoke OnGameStarted
     }
 
     /// <summary>
@@ -94,10 +118,25 @@ public class GameManager : NetworkBehaviour
                 currentPlayablePlayerType= PlayerType.Cross;
                 break;
         }
+        TriggerOnCurrentPlayablePlayerTypeChangeRPC();
+    }
+
+    /// <summary>
+    /// Invokes turn change event for both clients and hosts
+    /// </summary>
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnCurrentPlayablePlayerTypeChangeRPC()
+    {
+        OnCurrentPlayablePlayerTypeChange?.Invoke(this, EventArgs.Empty);
     }
 
     public PlayerType GetLocalPlayerType()
     {
         return localPlayerType;
+    }
+
+    public PlayerType GetCurrentPlayablePlayerType()
+    {
+        return currentPlayablePlayerType;
     }
 }

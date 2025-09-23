@@ -138,6 +138,18 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: 783cc304ca1926040b0237e95d1159ff, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: 39b30a7c8a60cec459fc635e79649871, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: f5b7e6aff9d2f8246b1c5449e989615b, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: c910300bb3aa9f740b912aed0f872639, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: dcc5dd0835ad121498b1a33bb912fad4, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 26d65278909a3724a887438e4c8fcdbf, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: a9a73ffc1cd25c84b8c1c166c171963d, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -253,25 +265,38 @@ MonoBehaviour:
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: e0ff2f511c0da56429a8a1af5f1b44d3, type: 2}
     state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: ecea4d7f5b4d7274cac51e260897c416, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 6d6c251b292aab347bf701f0c6ee4411, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: c8caa52d397af00449f4d3aebc9bc417, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: bd37aa8ab4d8c71459a25ffe4e2a41f5, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: dbe1208bac45eb049911b461862dbb0a, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: a124fe5121a48f947abc874013819e31, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: b39fe0fff829237479e8fd868f69804f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 5f6b91947228ad14587f3961c5d7508f, type: 2}
+    state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: 6fc759f58cb035a42971e7728e7e0b56, type: 2}
-  checkedLastUpdateTimestamp: 1758369274
+  lastSelectedLectureSO: {fileID: 11400000, guid: c55e7087661ee6d46a0636a5eafefb5a, type: 2}
+  checkedLastUpdateTimestamp: 1758606363
   lastUpdateVersion: 1.01
   lastQOTDResponse:
-    questionId: 223
-    questionText: What is the difference between Application.dataPath and Application.persistentDataPath
-      on Windows?
-    answerA: No difference on Windows
-    answerB: Application.dataPath is the install folder and Application.persistentDataPath
-      is on the Registry
-    answerC: Application.dataPath is the install folder and Application.persistentDataPath
-      is on the User Data
+    questionId: 224
+    questionText: What Types can you natively store with PlayerPrefs?
+    answerA: Anything
+    answerB: string, int, float, bool
+    answerC: string, int, float
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1758369274
+  lastQotdTimestamp: 1758606363
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -287,22 +312,22 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1758369274
+  websiteLatestMessageTimestamp: 1758606363
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1758369274
+  websiteDynamicMessageTimestamp: 1758606363
   websiteLatestVideos:
     videos:
+    - youTubeId: WvrS00H81xA
+      title: Should Silksong have an EASY MODE?
+    - youTubeId: Rr-jAQ_Qe04
+      title: TOP 10 NEW Systems and Tools SEPTEMBER 2025! | Unity Asset Store
     - youTubeId: q-LGDkojs08
       title: The BEST Systems to build to MASTER Programming Game Dev!
     - youTubeId: zQb8oq9IMZs
       title: Unity 6.3 is HERE!
-    - youTubeId: 4tXBS87J0Po
-      title: TOP 10 FREE NEW Assets SEPTEMBER 2025!
-    - youTubeId: -LQ0C9B2bzQ
-      title: Was I WRONG about Silksong?
-  websiteLatestVideosTimestamp: 1758369274
+  websiteLatestVideosTimestamp: 1758606363
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking
