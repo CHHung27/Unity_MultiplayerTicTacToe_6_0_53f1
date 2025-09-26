@@ -29,6 +29,11 @@ public class GameManager : NetworkBehaviour
     } // pass in x and y with EventArgs
 
     public event EventHandler OnGameStarted; // fire this when both players joined; listened by PlayerUI
+    public event EventHandler<OnGameWinEventArgs> OnGameWin; // fire this when one player wins; listened by GameVisualManager
+    public class OnGameWinEventArgs : EventArgs
+    {
+        public Vector2Int centerGridPosition;
+    }
     public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
 
     private void Awake()
@@ -135,6 +140,31 @@ public class GameManager : NetworkBehaviour
             case PlayerType.Circle:
                 currentPlayablePlayerType.Value = PlayerType.Cross;
                 break;
+        }
+
+        TestWinner();
+        
+    }
+
+    private bool TestWinnerLine(PlayerType aPlayerType, PlayerType bPlayerType, PlayerType cPlayerType)
+    {
+        return
+            aPlayerType != PlayerType.None &&
+            aPlayerType == bPlayerType &&
+            bPlayerType == cPlayerType;
+    }
+
+    private void TestWinner()
+    {
+        if (TestWinnerLine(playerTypeArray[0, 0], playerTypeArray[1, 0], playerTypeArray[2, 0]))
+        {
+            // Win!
+            Debug.Log("Winner!");
+            currentPlayablePlayerType.Value = PlayerType.None;
+            OnGameWin?.Invoke(this, new OnGameWinEventArgs
+            {
+                centerGridPosition = new Vector2Int(1, 0)
+            });
         }
     }
 

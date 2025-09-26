@@ -8,6 +8,7 @@ public class GameVisualManager : NetworkBehaviour
 {
     [SerializeField] private Transform crossPrefab;
     [SerializeField] private Transform circlePrefab;
+    [SerializeField] private Transform lineCompletePrefab;
 
 
     private const float GRID_SIZE = 3.1f; // grid size interval is 3.1f
@@ -15,6 +16,12 @@ public class GameVisualManager : NetworkBehaviour
     private void Start()
     {
         GameManager.Instance.OnClickedOnGridPosition += GameManager_OnClickedOnGridPosition;
+        GameManager.Instance.OnGameWin += GameManager_OnGameWin;
+    }
+
+    private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
+    {
+        // place win line
     }
 
     private void GameManager_OnClickedOnGridPosition(object sender, GameManager.OnClickedOnGridPositionEventArgs e)
