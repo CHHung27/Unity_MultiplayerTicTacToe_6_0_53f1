@@ -60,6 +60,7 @@ public class GameManager : NetworkBehaviour
         public PlayerType winningPlayerType;
     }
     public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
+    public event EventHandler OnRematch; // fire when RematchRpc() runs; listened by GameVisualManager to destroy previous visuals
 
     private void Awake()
     {
@@ -297,5 +298,31 @@ public class GameManager : NetworkBehaviour
     public PlayerType GetCurrentPlayablePlayerType()
     {
         return currentPlayablePlayerType.Value;
+    }
+
+
+    [Rpc(SendTo.Server)]
+    public void RematchRpc()
+    {
+        // reset playerTypeArray
+        for (int x = 0; x < playerTypeArray.GetLength(0); x++)
+        {
+            for (int y = 0; y < playerTypeArray.GetLength(1); y++)
+            {
+                playerTypeArray[x, y] = PlayerType.None;
+            }
+        }
+
+        // current playable player
+        currentPlayablePlayerType.Value = PlayerType.Cross;
+
+        // invoke event for GameVisualManager to destroy all visuals; using Rpc so client and server receive event
+        TriggerOnRematchRpc();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnRematchRpc()
+    {
+        OnRematch?.Invoke(this, EventArgs.Empty);
     }
 }

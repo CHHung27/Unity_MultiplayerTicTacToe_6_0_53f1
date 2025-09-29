@@ -1,4 +1,5 @@
-﻿using Unity.Netcode;
+﻿using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 /// <summary>
@@ -6,25 +7,51 @@ using UnityEngine;
 /// </summary>
 public class GameVisualManager : NetworkBehaviour
 {
+    private const float GRID_SIZE = 3.1f; // grid size interval is 3.1f
+
     [SerializeField] private Transform crossPrefab;
     [SerializeField] private Transform circlePrefab;
     [SerializeField] private Transform lineCompletePrefab;
 
+    private List<GameObject> visualGameObjectList; // keeps track of all spawned visual objects so we can clear them OnRematch
 
-    private const float GRID_SIZE = 3.1f; // grid size interval is 3.1f
+    
+    private void Awake()
+    {
+        visualGameObjectList = new List<GameObject>();
+    }
 
     private void Start()
     {
         GameManager.Instance.OnClickedOnGridPosition += GameManager_OnClickedOnGridPosition;
         GameManager.Instance.OnGameWin += GameManager_OnGameWin;
+        GameManager.Instance.OnRematch += GameManager_OnRematch;
+    }
+
+    private void GameManager_OnRematch(object sender, System.EventArgs e)
+    {
+        // only run if IsServer
+        if (!NetworkManager.Singleton.IsServer)
+        {
+            return;
+        }
+
+        // clear visualGameObjectList
+        foreach (GameObject visualGameObject in visualGameObjectList)
+        {
+            Destroy(visualGameObject);
+        }
+
+        visualGameObjectList.Clear();
     }
 
     private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
     {
+        // only run placing winning line code if IsServer
         if (!NetworkManager.Singleton.IsServer)
         {
             return;
-        } // only run placing winning line code if IsServer
+        }
 
         // figure out winning line orientation
         float eulerZ = 0f;
@@ -42,6 +69,8 @@ public class GameVisualManager : NetworkBehaviour
             GetGridWorldPosition(e.line.centerGridPosition.x, e.line.centerGridPosition.y),
             Quaternion.Euler(0, 0, eulerZ));
         lineCompleteTransform.GetComponent<NetworkObject>().Spawn(true);
+
+        visualGameObjectList.Add(lineCompleteTransform.gameObject);
     }
 
     private void GameManager_OnClickedOnGridPosition(object sender, GameManager.OnClickedOnGridPositionEventArgs e)
@@ -79,6 +108,8 @@ public class GameVisualManager : NetworkBehaviour
         }
         Transform spawnedPrefabTransform = Instantiate(spawnedPrefab, GetGridWorldPosition(x, y), Quaternion.identity);
         spawnedPrefabTransform.GetComponent<NetworkObject>().Spawn(true); // syncs Network Object across server/client
+
+        visualGameObjectList.Add(spawnedPrefabTransform.gameObject);
     }
 
     /// <summary>
