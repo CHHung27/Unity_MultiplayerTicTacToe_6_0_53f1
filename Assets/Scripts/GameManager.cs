@@ -44,19 +44,20 @@ public class GameManager : NetworkBehaviour
     private PlayerType[,] playerTypeArray;
     private List<Line> lineList; // stores all possible lines; initialized in Awake
 
-    public event EventHandler<OnClickedOnGridPositionEventArgs> OnClickedOnGridPosition; // Event listened to by GameVisualManager
+    public event EventHandler<OnClickedOnGridPositionEventArgs> OnClickedOnGridPosition; // Event listened to by GameVisualManager to place objects
     public class OnClickedOnGridPositionEventArgs : EventArgs
     {
         public int x;
         public int y;
         public PlayerType playerType;
-    } // pass in x and y with EventArgs
+    } // pass in x, y, and player placing the object with EventArgs
 
-    public event EventHandler OnGameStarted; // fire this when both players joined; listened by PlayerUI
+    public event EventHandler OnGameStarted; // fired when both players joins; listened by PlayerUI
     public event EventHandler<OnGameWinEventArgs> OnGameWin; // fire this when one player wins; listened by GameVisualManager
     public class OnGameWinEventArgs : EventArgs
     {
         public Line line;
+        public PlayerType winningPlayerType;
     }
     public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
 
@@ -69,7 +70,7 @@ public class GameManager : NetworkBehaviour
 
         Instance = this;
 
-        playerTypeArray = new PlayerType[3, 3];
+        playerTypeArray = new PlayerType[3, 3]; // initialize our playerTypeArray as a 3x3 grid
 
         lineList = new List<Line>
         {
@@ -224,7 +225,38 @@ public class GameManager : NetworkBehaviour
         }
 
         TestWinner();
-        
+    }
+
+
+    /// <summary>
+    /// checks if grid has a winning line
+    /// </summary>
+    private void TestWinner()
+    {
+        // iterates the lineList, testing all lines for winner
+        for (int i = 0; i < lineList.Count; i++) {
+            Line line = lineList[i];
+            if (TestWinnerLine(line))
+            {
+                // Win!
+                Debug.Log("Winner!");
+                currentPlayablePlayerType.Value = PlayerType.None; // stops play
+                TriggerOnGameWinRPC(i, playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y]); // invoke OnGameWin event as RPC
+                break;
+            }
+        }
+    }
+
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnGameWinRPC(int lineIndex, PlayerType winningPlayerType)
+    {
+        Line line = lineList[lineIndex];
+        OnGameWin?.Invoke(this, new OnGameWinEventArgs
+        {
+            line = line,
+            winningPlayerType = winningPlayerType,
+        });
     }
 
 
@@ -256,27 +288,6 @@ public class GameManager : NetworkBehaviour
             playerTypeArray[line.gridVector2IntList[2].x, line.gridVector2IntList[2].y]);
     }
 
-    /// <summary>
-    /// checks if grid has a winning line
-    /// </summary>
-    private void TestWinner()
-    {
-        foreach (Line line in lineList) {
-            if (TestWinnerLine(line))
-            {
-                // Win!
-                Debug.Log("Winner!");
-                currentPlayablePlayerType.Value = PlayerType.None;
-                OnGameWin?.Invoke(this, new OnGameWinEventArgs
-                {
-                    line = line
-                });
-                break;
-            }
-        }
-
-        
-    }
 
     public PlayerType GetLocalPlayerType()
     {

@@ -21,6 +21,11 @@ public class GameVisualManager : NetworkBehaviour
 
     private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
     {
+        if (!NetworkManager.Singleton.IsServer)
+        {
+            return;
+        } // only run placing winning line code if IsServer
+
         // figure out winning line orientation
         float eulerZ = 0f;
         switch (e.line.orientation)
