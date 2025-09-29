@@ -21,7 +21,22 @@ public class GameVisualManager : NetworkBehaviour
 
     private void GameManager_OnGameWin(object sender, GameManager.OnGameWinEventArgs e)
     {
-        // place win line
+        // figure out winning line orientation
+        float eulerZ = 0f;
+        switch (e.line.orientation)
+        {
+            case GameManager.Orientation.Horizontal:   eulerZ = 0f; break;
+            case GameManager.Orientation.Vertical:     eulerZ = 90f; break;
+            case GameManager.Orientation.DiagonalA:    eulerZ = 45f; break;
+            case GameManager.Orientation.DiagonalB:    eulerZ = -45f; break;
+        }
+
+        // place win line on given line with correct orientation
+        Transform lineCompleteTransform = 
+            Instantiate(lineCompletePrefab,
+            GetGridWorldPosition(e.line.centerGridPosition.x, e.line.centerGridPosition.y),
+            Quaternion.Euler(0, 0, eulerZ));
+        lineCompleteTransform.GetComponent<NetworkObject>().Spawn(true);
     }
 
     private void GameManager_OnClickedOnGridPosition(object sender, GameManager.OnClickedOnGridPositionEventArgs e)

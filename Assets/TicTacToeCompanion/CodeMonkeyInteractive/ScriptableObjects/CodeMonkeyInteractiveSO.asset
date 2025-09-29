@@ -320,17 +320,17 @@ MonoBehaviour:
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
   lastSelectedLectureSO: {fileID: 11400000, guid: 54cc58ba6299f604089f0ee2bb0219eb, type: 2}
-  checkedLastUpdateTimestamp: 1758760020
+  checkedLastUpdateTimestamp: 1759148011
   lastUpdateVersion: 1.01
   lastQOTDResponse:
-    questionId: 224
-    questionText: What Types can you natively store with PlayerPrefs?
-    answerA: Anything
-    answerB: string, int, float, bool
-    answerC: string, int, float
+    questionId: 226
+    questionText: When you create a new script, do you always have to extend MonoBehaviour?
+    answerA: Yes
+    answerB: No
+    answerC: Only if you want to use it as a Game Object Component
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1758760020
+  lastQotdTimestamp: 1759148011
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -346,22 +346,22 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1758760020
+  websiteLatestMessageTimestamp: 1759148011
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1758760020
+  websiteDynamicMessageTimestamp: 1759148011
   websiteLatestVideos:
     videos:
+    - youTubeId: E7OBm60vUCY
+      title: BEST NEW Visual Assets to INSPIRE YOU!
+    - youTubeId: 5GqRR8-yYvQ
+      title: How I find AWESOME Game Dev stuff!
     - youTubeId: WvrS00H81xA
       title: Should Silksong have an EASY MODE?
     - youTubeId: Rr-jAQ_Qe04
       title: TOP 10 NEW Systems and Tools SEPTEMBER 2025! | Unity Asset Store
-    - youTubeId: q-LGDkojs08
-      title: The BEST Systems to build to MASTER Programming Game Dev!
-    - youTubeId: zQb8oq9IMZs
-      title: Unity 6.3 is HERE!
-  websiteLatestVideosTimestamp: 1758760020
+  websiteLatestVideosTimestamp: 1759148011
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking
