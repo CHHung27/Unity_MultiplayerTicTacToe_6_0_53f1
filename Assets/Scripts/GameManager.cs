@@ -60,7 +60,8 @@ public class GameManager : NetworkBehaviour
         public PlayerType winningPlayerType;
     }
     public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
-    public event EventHandler OnRematch; // fire when RematchRpc() runs; listened by GameVisualManager to destroy previous visuals
+    public event EventHandler OnRematch;  // fire when RematchRpc() runs; listened by GameVisualManager to destroy previous visuals
+    public event EventHandler OnGameTied; // fire when TestWinner finds a tie; listened by GameOverUI to display correct UI elements
 
     private void Awake()
     {
@@ -243,9 +244,37 @@ public class GameManager : NetworkBehaviour
                 Debug.Log("Winner!");
                 currentPlayablePlayerType.Value = PlayerType.None; // stops play
                 TriggerOnGameWinRPC(i, playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y]); // invoke OnGameWin event as RPC
-                break;
+                return;
             }
         }
+
+
+        // iterates the whole grid checking for empty spaces; if no empty spaces left -> Game is tied
+        bool isTied = true;
+        for (int x = 0; x < playerTypeArray.GetLength(0); x++)
+        {
+            for (int y = 0; y < playerTypeArray.GetLength(1); y++)
+            {
+                // if any of the grid position is still None, then the game is not tied
+                if (playerTypeArray[x, y] == PlayerType.None)
+                {
+                    isTied = false;
+                    break;
+                }
+            }
+        }
+
+        if (isTied)
+        {
+            // game is tied, invoke OnGameTied event
+            TriggerOnGameTiedRpc();
+        }
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnGameTiedRpc()
+    {
+        OnGameTied?.Invoke(this, EventArgs.Empty);
     }
 
 

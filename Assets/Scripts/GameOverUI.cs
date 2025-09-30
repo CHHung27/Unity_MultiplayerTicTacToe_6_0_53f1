@@ -7,6 +7,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultTextMesh; // says "You Win!" or "You Lose!" based on result
     [SerializeField] private Color winColor;
     [SerializeField] private Color loseColor;
+    [SerializeField] private Color tieColor;
     [SerializeField] private Button rematchButton;
 
 
@@ -22,7 +23,16 @@ public class GameOverUI : MonoBehaviour
     {
         GameManager.Instance.OnGameWin += GameManager_OnGameWin;
         GameManager.Instance.OnRematch += GameManager_OnRematch;
+        GameManager.Instance.OnGameTied += GameManager_OnGameTied;
         Hide();
+    }
+
+    private void GameManager_OnGameTied(object sender, System.EventArgs e)
+    {
+        // is tied game, show tied text
+        resultTextMesh.text = "TIE!";
+        resultTextMesh.color = tieColor;
+        Show();
     }
 
     private void GameManager_OnRematch(object sender, System.EventArgs e)
