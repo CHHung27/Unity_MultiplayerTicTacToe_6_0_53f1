@@ -43,6 +43,8 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<PlayerType> currentPlayablePlayerType = new NetworkVariable<PlayerType>(); // can include optional parameters; default: everybody can read, but only server can write
     private PlayerType[,] playerTypeArray;
     private List<Line> lineList; // stores all possible lines; initialized in Awake
+    private NetworkVariable<int> playerCrossScore = new NetworkVariable<int>();  // stores player cross wins; network var is synced all the time, must be initialized when defined
+    private NetworkVariable<int> playerCircleScore = new NetworkVariable<int>(); // stores player circle wins
 
     public event EventHandler<OnClickedOnGridPositionEventArgs> OnClickedOnGridPosition; // Event listened to by GameVisualManager to place objects
     public class OnClickedOnGridPositionEventArgs : EventArgs
@@ -62,6 +64,7 @@ public class GameManager : NetworkBehaviour
     public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
     public event EventHandler OnRematch;  // fire when RematchRpc() runs; listened by GameVisualManager to destroy previous visuals
     public event EventHandler OnGameTied; // fire when TestWinner finds a tie; listened by GameOverUI to display correct UI elements
+    public event EventHandler OnScoreChanged; // fire score is changed; listened by PlayerUI to display correct score
 
     private void Awake()
     {
@@ -160,6 +163,16 @@ public class GameManager : NetworkBehaviour
         {
             OnCurrentPlayablePlayerTypeChange?.Invoke(this, EventArgs.Empty);
         };
+
+        playerCrossScore.OnValueChanged += (int prevScore, int newScore) =>
+        {
+            OnScoreChanged?.Invoke(this, EventArgs.Empty);
+        };
+
+        playerCircleScore.OnValueChanged += (int prevScore, int newScore) =>
+        {
+            OnScoreChanged?.Invoke(this, EventArgs.Empty);
+        };
     }
 
     /// <summary>
@@ -243,7 +256,17 @@ public class GameManager : NetworkBehaviour
                 // Win!
                 Debug.Log("Winner!");
                 currentPlayablePlayerType.Value = PlayerType.None; // stops play
-                TriggerOnGameWinRPC(i, playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y]); // invoke OnGameWin event as RPC
+                PlayerType winPlayerType = playerTypeArray[line.centerGridPosition.x, line.centerGridPosition.y];
+                switch (winPlayerType)
+                {
+                    case PlayerType.Cross:
+                        playerCrossScore.Value++;
+                        break;
+                    case PlayerType.Circle:
+                        playerCircleScore.Value++;
+                        break;
+                }
+                TriggerOnGameWinRPC(i, winPlayerType); // invoke OnGameWin event as RPC; passing in winning player
                 return;
             }
         }
@@ -353,5 +376,11 @@ public class GameManager : NetworkBehaviour
     private void TriggerOnRematchRpc()
     {
         OnRematch?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void GetScores(out int playerCrossScore, out int playerCircleScore)
+    {
+        playerCrossScore = this.playerCrossScore.Value;
+        playerCircleScore = this.playerCircleScore.Value;
     }
 }
