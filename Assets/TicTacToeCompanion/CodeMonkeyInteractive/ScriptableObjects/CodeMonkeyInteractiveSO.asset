@@ -260,6 +260,22 @@ MonoBehaviour:
     state: 2
   - quizSO: {fileID: 11400000, guid: e73b6e70699571347bfc454dfe601fa2, type: 2}
     state: 2
+  - quizSO: {fileID: 11400000, guid: c227fdcbce6fd8e4e88023d1e99d8adc, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 3b6c7f3b078054f4fb27e7e2b581c989, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 6a2ccbcaa65a12d45a6280cf4288a55c, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 9e032e660c1da6d459ea9ba62a55f6b6, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 515017b516a753245bee71ddb6e938a4, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: 8d062986252032949b4b528c2ae9b996, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: d8a666a0ca2cb6c4da02dd4ab9f06abf, type: 2}
+    state: 2
+  - quizSO: {fileID: 11400000, guid: c42a790f9a7965249b86f8dd7c047dcc, type: 2}
+    state: 2
   frequentlyAskedQuestionStateList:
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 351da3a185159474aa34eb6900655117, type: 2}
     state: 2
@@ -505,22 +521,40 @@ MonoBehaviour:
     state: 2
   - frequentlyAskedQuestionSO: {fileID: 11400000, guid: fe0a9ef4819919448917577e8968f9fb, type: 2}
     state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 0883e6615a568224eada103ee7fa2738, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: f0f9d16a389c2eb46b7bb561ec4bdd11, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: cbc64769b7a5e7d439a8a2221afe6e9e, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 73109d532da3fd947a87b25ec2bbd0cc, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: d612bf07f60233d47b115cf33e2f21e9, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 9f3d13b4641189c4bb5e3c6b3e473c8f, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 0f11a624b026ecb44b72682989236296, type: 2}
+    state: 2
+  - frequentlyAskedQuestionSO: {fileID: 11400000, guid: 9495fe1fc01785341a9722e57cdd2702, type: 2}
+    state: 2
   exerciseStateList: []
   lectureListSO: {fileID: 11400000, guid: c1af4d7cadebe754fa5ac3880e0890f9, type: 2}
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
-  lastSelectedLectureSO: {fileID: 11400000, guid: e556eb7d6da71794ca08022977d6974a, type: 2}
-  checkedLastUpdateTimestamp: 1759228347
+  lastSelectedLectureSO: {fileID: 11400000, guid: baf90871ae2218644b96169c53e389fb, type: 2}
+  checkedLastUpdateTimestamp: 1759494144
   lastUpdateVersion: 1.01
   lastQOTDResponse:
-    questionId: 226
-    questionText: When you create a new script, do you always have to extend MonoBehaviour?
+    questionId: 227
+    questionText: 'Is this valid code?
+
+      <p>Color? myColor = null;</p>'
     answerA: Yes
-    answerB: No
-    answerC: Only if you want to use it as a Game Object Component
+    answerB: No, myColor is a struct and cannot be null
+    answerC: 
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1759228347
+  lastQotdTimestamp: 1759494144
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -536,22 +570,22 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1759228347
+  websiteLatestMessageTimestamp: 1759494144
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1759228347
+  websiteDynamicMessageTimestamp: 1759494144
   websiteLatestVideos:
     videos:
+    - youTubeId: vhflNElicXU
+      title: Optimization is awesome, but do NOT make this mistake!
     - youTubeId: _UadeZn6kI8
       title: Should you use UI Toolkit or Unity UI?
     - youTubeId: E7OBm60vUCY
       title: BEST NEW Visual Assets to INSPIRE YOU!
     - youTubeId: 5GqRR8-yYvQ
       title: How I find AWESOME Game Dev stuff!
-    - youTubeId: WvrS00H81xA
-      title: Should Silksong have an EASY MODE?
-  websiteLatestVideosTimestamp: 1759228347
+  websiteLatestVideosTimestamp: 1759494144
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking

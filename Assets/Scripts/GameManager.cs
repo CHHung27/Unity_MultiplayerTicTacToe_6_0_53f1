@@ -64,7 +64,8 @@ public class GameManager : NetworkBehaviour
     public event EventHandler OnCurrentPlayablePlayerTypeChange; // fire when turn change; listened by PlayerUI
     public event EventHandler OnRematch;  // fire when RematchRpc() runs; listened by GameVisualManager to destroy previous visuals
     public event EventHandler OnGameTied; // fire when TestWinner finds a tie; listened by GameOverUI to display correct UI elements
-    public event EventHandler OnScoreChanged; // fire score is changed; listened by PlayerUI to display correct score
+    public event EventHandler OnScoreChanged; // fire when score is changed; listened by PlayerUI to display correct score
+    public event EventHandler OnPlacedObject; // fire when cross or circle is placed; listened by SoundManager to play sounds
 
     private void Awake()
     {
@@ -227,6 +228,8 @@ public class GameManager : NetworkBehaviour
             playerType = playerType,
         }); // listened to by GameVisualManager
 
+        TriggerOnPlacedObjectRpc();
+
         // switch playerType to rotate turns
         switch (currentPlayablePlayerType.Value)
         {
@@ -240,6 +243,12 @@ public class GameManager : NetworkBehaviour
         }
 
         TestWinner();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void TriggerOnPlacedObjectRpc()
+    {
+        OnPlacedObject?.Invoke(this, EventArgs.Empty);
     }
 
 
