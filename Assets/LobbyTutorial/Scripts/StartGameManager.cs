@@ -6,9 +6,8 @@ using Unity.Services.Relay;
 using UnityEngine;
 
 public class StartGameManager : MonoBehaviour {
-
-
-
+    
+    
     private void Start() {
         LobbyManager.Instance.OnLobbyStartGame += LobbyManager_OnLobbyStartGame;
     }
@@ -21,16 +20,7 @@ public class StartGameManager : MonoBehaviour {
             JoinRelay(LobbyManager.RelayJoinCode);
         }
     }
-
-    public void StartHost() {
-        NetworkManager.Singleton.StartHost();
-    }
-
-    public void StartClient() {
-        NetworkManager.Singleton.StartClient();
-    }
-
-
+    
     private async void CreateRelay() {
         try {
             Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);
@@ -63,5 +53,14 @@ public class StartGameManager : MonoBehaviour {
             Debug.Log(e);
         }
     }
+    
+    public void StartHost()
+    {
+        NetworkManager.Singleton.StartHost();
+    }
 
+    public void StartClient()
+    {
+        NetworkManager.Singleton.StartClient();
+    }
 }

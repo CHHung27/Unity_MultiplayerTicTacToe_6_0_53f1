@@ -8,8 +8,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviour {
-
-
     public static LobbyManager Instance { get; private set; }
 
 
