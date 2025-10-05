@@ -53,9 +53,8 @@ public class LobbyManager : MonoBehaviour {
         Ninja,
         Zombie
     }
-
-
-
+    
+    
     private float heartbeatTimer;
     private float lobbyPollTimer;
     private float refreshLobbyListTimer = 5f;
