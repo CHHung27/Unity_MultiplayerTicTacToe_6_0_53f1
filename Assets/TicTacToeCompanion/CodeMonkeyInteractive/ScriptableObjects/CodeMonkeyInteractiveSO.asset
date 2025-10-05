@@ -542,19 +542,17 @@ MonoBehaviour:
   defaultScene: {fileID: 102900000, guid: bb81c32a07e112643ac0b41e5f2d830a, type: 3}
   activeExerciseSO: {fileID: 0}
   lastSelectedLectureSO: {fileID: 11400000, guid: baf90871ae2218644b96169c53e389fb, type: 2}
-  checkedLastUpdateTimestamp: 1759494144
+  checkedLastUpdateTimestamp: 1759659200
   lastUpdateVersion: 1.01
   lastQOTDResponse:
-    questionId: 227
-    questionText: 'Is this valid code?
-
-      <p>Color? myColor = null;</p>'
-    answerA: Yes
-    answerB: No, myColor is a struct and cannot be null
-    answerC: 
+    questionId: 228
+    questionText: What does Normalizing a Vector do?
+    answerA: Modifies its x,y,z to get a magnitude of 1
+    answerB: Invert its x,y,z
+    answerC: Flatten the z
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1759494144
+  lastQotdTimestamp: 1759659200
   websiteLatestMessage:
     text: 'Hi there!
 
@@ -570,22 +568,22 @@ MonoBehaviour:
 
       Join the <b>Private Discord</b> and <b>Weekly Private Livestreams</b>
       where I''m there to answer any questions you have.<br><a href=''https://cmonkey.co/tictactoeprivate''>https://cmonkey.co/tictactoeprivate</a>'
-  websiteLatestMessageTimestamp: 1759494144
+  websiteLatestMessageTimestamp: 1759659200
   websiteDynamicMessage:
     text: <u>Fresh Assets on Sale!</u>
     url: https://cmonkey.co/unityassetstore
-  websiteDynamicMessageTimestamp: 1759494144
+  websiteDynamicMessageTimestamp: 1759659200
   websiteLatestVideos:
     videos:
+    - youTubeId: Q59s-VS684o
+      title: MASSIVE Unity Security Vulnerability! (but also nothing to worry about)
     - youTubeId: vhflNElicXU
       title: Optimization is awesome, but do NOT make this mistake!
     - youTubeId: _UadeZn6kI8
       title: Should you use UI Toolkit or Unity UI?
     - youTubeId: E7OBm60vUCY
       title: BEST NEW Visual Assets to INSPIRE YOU!
-    - youTubeId: 5GqRR8-yYvQ
-      title: How I find AWESOME Game Dev stuff!
-  websiteLatestVideosTimestamp: 1759494144
+  websiteLatestVideosTimestamp: 1759659200
   lastChatAIQuestionAsked: What is Netcode for Game Objects?
   lastChatAIQuestionAnswer: 'Netcode for Game Objects is Unity''s own networking
     toolstack designed for small-scale co-op games. It''s the simplest networking

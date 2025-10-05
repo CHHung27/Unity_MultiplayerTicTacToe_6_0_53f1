@@ -787,11 +787,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7ea85f02-52ba-4b03-89cd-8d0b3cc2c257
+  cloudProjectId: 2bad4a24-5a79-4bfe-bd0a-85224cf60152
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: TicTacToeMultiplayer 2024-12-28_16-08-47
-  organizationId: hugo-cardoso
+  projectName: Unity_MultiplayerTicTacToe_6_0_53f1
+  organizationId: jaja322
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
